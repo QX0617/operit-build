@@ -1,0 +1,517 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: BuildType(clone): resValue 'string/app_name' value is being replaced.
+
+> Task :llama:preBuild UP-TO-DATE
+> Task :quickjs:preBuild UP-TO-DATE
+> Task :terminal:preBuild UP-TO-DATE
+> Task :dragonbones:preBuild UP-TO-DATE
+> Task :mmd:preBuild UP-TO-DATE
+> Task :mnn:preBuild UP-TO-DATE
+> Task :showerclient:preBuild UP-TO-DATE
+> Task :fbx:preBuild UP-TO-DATE
+> Task :llama:preReleaseBuild UP-TO-DATE
+> Task :fbx:preReleaseBuild UP-TO-DATE
+> Task :mmd:preReleaseBuild UP-TO-DATE
+> Task :dragonbones:preReleaseBuild UP-TO-DATE
+> Task :quickjs:preReleaseBuild UP-TO-DATE
+> Task :terminal:preReleaseBuild UP-TO-DATE
+> Task :showerclient:preReleaseBuild UP-TO-DATE
+> Task :mnn:preReleaseBuild UP-TO-DATE
+> Task :app:objectboxPrepareBuild
+> Task :showerclient:mergeReleaseJniLibFolders
+> Task :showerclient:mergeReleaseNativeLibs NO-SOURCE
+> Task :showerclient:copyReleaseJniLibsProjectOnly
+> Task :showerclient:prepareReleaseArtProfile UP-TO-DATE
+> Task :showerclient:compileReleaseAidl NO-SOURCE
+> Task :showerclient:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :showerclient:generateReleaseResValues FROM-CACHE
+> Task :showerclient:generateReleaseResources FROM-CACHE
+> Task :showerclient:packageReleaseResources FROM-CACHE
+> Task :showerclient:processReleaseNavigationResources FROM-CACHE
+> Task :showerclient:parseReleaseLocalResources FROM-CACHE
+> Task :showerclient:generateReleaseRFile FROM-CACHE
+> Task :terminal:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :mnn:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :llama:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :dragonbones:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :mmd:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :quickjs:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :showerclient:compileReleaseKotlin FROM-CACHE
+> Task :showerclient:javaPreCompileRelease FROM-CACHE
+> Task :terminal:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:mergeReleaseJniLibFolders
+> Task :showerclient:compileReleaseJavaWithJavac FROM-CACHE
+> Task :terminal:mergeReleaseJniLibFolders
+> Task :fbx:prepareReleaseArtProfile UP-TO-DATE
+> Task :fbx:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :fbx:generateReleaseResValues FROM-CACHE
+> Task :fbx:generateReleaseResources FROM-CACHE
+> Task :dragonbones:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:prepareReleaseArtProfile UP-TO-DATE
+> Task :fbx:mergeReleaseNativeLibs
+> Task :terminal:mergeReleaseNativeLibs
+> Task :fbx:packageReleaseResources FROM-CACHE
+> Task :showerclient:writeReleaseAarMetadata
+> Task :showerclient:extractDeepLinksRelease FROM-CACHE
+> Task :dragonbones:configureCMakeRelWithDebInfo[armeabi-v7a]
+> Task :fbx:processReleaseNavigationResources FROM-CACHE
+> Task :fbx:copyReleaseJniLibsProjectOnly
+> Task :fbx:parseReleaseLocalResources FROM-CACHE
+> Task :showerclient:processReleaseManifest FROM-CACHE
+> Task :fbx:generateReleaseRFile FROM-CACHE
+> Task :showerclient:compileReleaseLibraryResources FROM-CACHE
+> Task :showerclient:mergeReleaseShaders
+> Task :showerclient:compileReleaseShaders NO-SOURCE
+> Task :showerclient:generateReleaseAssets UP-TO-DATE
+> Task :showerclient:mergeReleaseAssets
+> Task :showerclient:bundleLibRuntimeToJarRelease
+> Task :showerclient:bundleLibCompileToJarRelease
+> Task :showerclient:bundleLibRuntimeToDirRelease
+> Task :showerclient:processReleaseJavaRes
+> Task :showerclient:createFullJarRelease
+> Task :showerclient:extractProguardFiles
+> Task :showerclient:generateReleaseLintModel
+> Task :showerclient:prepareLintJarForPublish UP-TO-DATE
+> Task :fbx:compileReleaseKotlin FROM-CACHE
+> Task :fbx:javaPreCompileRelease FROM-CACHE
+> Task :fbx:compileReleaseJavaWithJavac NO-SOURCE
+> Task :fbx:writeReleaseAarMetadata
+> Task :showerclient:stripReleaseDebugSymbols NO-SOURCE
+> Task :fbx:extractDeepLinksRelease FROM-CACHE
+> Task :showerclient:checkReleaseAarMetadata
+> Task :showerclient:copyReleaseJniLibsProjectAndLocalJars
+> Task :showerclient:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :fbx:processReleaseManifest FROM-CACHE
+> Task :fbx:compileReleaseLibraryResources FROM-CACHE
+> Task :terminal:compileReleaseAidl FROM-CACHE
+> Task :fbx:bundleLibRuntimeToDirRelease
+> Task :fbx:bundleLibCompileToJarRelease
+> Task :terminal:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :terminal:generateReleaseResValues FROM-CACHE
+> Task :fbx:mergeReleaseShaders
+> Task :fbx:bundleLibRuntimeToJarRelease
+> Task :fbx:compileReleaseShaders NO-SOURCE
+> Task :fbx:generateReleaseAssets UP-TO-DATE
+> Task :terminal:generateReleaseResources FROM-CACHE
+> Task :terminal:copyReleaseJniLibsProjectOnly
+> Task :fbx:mergeReleaseAssets
+> Task :showerclient:extractReleaseAnnotations FROM-CACHE
+> Task :showerclient:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :showerclient:mergeReleaseConsumerProguardFiles UP-TO-DATE
+> Task :fbx:processReleaseJavaRes
+> Task :terminal:packageReleaseResources FROM-CACHE
+> Task :fbx:createFullJarRelease
+> Task :terminal:processReleaseNavigationResources FROM-CACHE
+> Task :showerclient:writeReleaseLintModelMetadata
+> Task :terminal:parseReleaseLocalResources FROM-CACHE
+> Task :fbx:extractProguardFiles
+> Task :showerclient:generateReleaseLintVitalModel
+> Task :terminal:generateReleaseRFile FROM-CACHE
+> Task :showerclient:mergeReleaseJavaResource
+> Task :showerclient:mapReleaseSourceSetPaths
+> Task :showerclient:syncReleaseLibJars FROM-CACHE
+> Task :fbx:generateReleaseLintModel
+> Task :showerclient:bundleReleaseLocalLintAar
+> Task :fbx:prepareLintJarForPublish UP-TO-DATE
+> Task :fbx:checkReleaseAarMetadata
+> Task :showerclient:bundleReleaseAar
+> Task :fbx:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :fbx:extractReleaseAnnotations FROM-CACHE
+> Task :fbx:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :fbx:mergeReleaseConsumerProguardFiles
+> Task :fbx:mergeReleaseJavaResource
+> Task :fbx:stripReleaseDebugSymbols
+> Task :app:syncSttModelAssets
+> Task :fbx:syncReleaseLibJars FROM-CACHE
+> Task :fbx:writeReleaseLintModelMetadata
+> Task :fbx:copyReleaseJniLibsProjectAndLocalJars
+> Task :fbx:generateReleaseLintVitalModel
+> Task :fbx:bundleReleaseLocalLintAar
+> Task :fbx:bundleReleaseAar
+> Task :fbx:mapReleaseSourceSetPaths
+> Task :terminal:javaPreCompileRelease FROM-CACHE
+> Task :terminal:writeReleaseAarMetadata
+> Task :terminal:extractDeepLinksRelease FROM-CACHE
+> Task :terminal:processReleaseManifest FROM-CACHE
+> Task :terminal:mergeReleaseShaders
+> Task :terminal:compileReleaseShaders NO-SOURCE
+> Task :terminal:generateReleaseAssets UP-TO-DATE
+> Task :showerclient:mergeReleaseResources FROM-CACHE
+> Task :terminal:mergeReleaseAssets
+> Task :terminal:extractProguardFiles
+> Task :terminal:prepareLintJarForPublish UP-TO-DATE
+> Task :terminal:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :terminal:writeReleaseLintModelMetadata
+> Task :terminal:checkReleaseAarMetadata
+> Task :terminal:mapReleaseSourceSetPaths
+
+> Task :terminal:stripReleaseDebugSymbols
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/terminal/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libsudo.so': The file was not recognized as a valid object file
+
+Unable to strip the following libraries, packaging them as they are: libsudo.so. Run with --info option to learn more.
+
+> Task :mnn:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :llama:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :mmd:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :quickjs:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:copyReleaseJniLibsProjectAndLocalJars
+> Task :dragonbones:buildCMakeRelWithDebInfo[armeabi-v7a]
+> Task :showerclient:lintVitalAnalyzeRelease
+> Task :terminal:compileReleaseKotlin
+> Task :fbx:mergeReleaseResources FROM-CACHE
+
+> Task :mmd:buildCMakeRelWithDebInfo[arm64-v8a]
+C/C++: ninja: Entering directory `/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/RelWithDebInfo/4t562x3c/arm64-v8a'
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Model/MMD/VPDFile.cpp:10:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Base/Log.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/spdlog.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/common.h:46:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/fmt.h:21:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:801:22: warning: 'allocate' is deprecated [-Wdeprecated-declarations]
+C/C++:   801 |   T *new_ptr = this->allocate(new_capacity, FMT_NULL);
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:757:3: note: in instantiation of member function 'fmt::internal::MemoryBuffer<char, 500>::grow' requested here
+C/C++:   757 |   ~MemoryBuffer() { deallocate(); }
+C/C++:       |   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3136:7: note: in instantiation of member function 'fmt::internal::MemoryBuffer<char, 500>::~MemoryBuffer' requested here
+C/C++:  3136 | class BasicMemoryWriter : public BasicWriter<Char> {
+C/C++:       |       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:154:55: note: 'allocate' has been explicitly marked deprecated here
+C/C++:   154 |   _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_IN_CXX17 _Tp*
+C/C++:       |                                                       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Model/MMD/VPDFile.cpp:10:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Base/Log.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/spdlog.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/common.h:46:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/fmt.h:21:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:801:22: warning: 'allocate' is deprecated [-Wdeprecated-declarations]
+C/C++:   801 |   T *new_ptr = this->allocate(new_capacity, FMT_NULL);
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:755:12: note: in instantiation of member function 'fmt::internal::MemoryBuffer<wchar_t, 500>::grow' requested here
+C/C++:   755 |   explicit MemoryBuffer(const Allocator &alloc = Allocator())
+C/C++:       |            ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3142:35: note: in instantiation of member function 'fmt::internal::MemoryBuffer<wchar_t, 500>::MemoryBuffer' requested here
+C/C++:  3142 |     : BasicWriter<Char>(buffer_), buffer_(alloc) {}
+C/C++:       |                                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3299:17: note: in instantiation of member function 'fmt::BasicMemoryWriter<wchar_t>::BasicMemoryWriter' requested here
+C/C++:  3299 |   WMemoryWriter w;
+C/C++:       |                 ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:154:55: note: 'allocate' has been explicitly marked deprecated here
+C/C++:   154 |   _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_IN_CXX17 _Tp*
+C/C++:       |                                                       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: 2 warnings generated.
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Model/MMD/VMDFile.cpp:8:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Base/Log.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/spdlog.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/common.h:46:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/fmt.h:21:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:801:22: warning: 'allocate' is deprecated [-Wdeprecated-declarations]
+C/C++:   801 |   T *new_ptr = this->allocate(new_capacity, FMT_NULL);
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:757:3: note: in instantiation of member function 'fmt::internal::MemoryBuffer<char, 500>::grow' requested here
+C/C++:   757 |   ~MemoryBuffer() { deallocate(); }
+C/C++:       |   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3136:7: note: in instantiation of member function 'fmt::internal::MemoryBuffer<char, 500>::~MemoryBuffer' requested here
+C/C++:  3136 | class BasicMemoryWriter : public BasicWriter<Char> {
+C/C++:       |       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:154:55: note: 'allocate' has been explicitly marked deprecated here
+C/C++:   154 |   _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_IN_CXX17 _Tp*
+C/C++:       |                                                       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Model/MMD/VMDFile.cpp:8:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Base/Log.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/spdlog.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/common.h:46:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/fmt.h:21:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:801:22: warning: 'allocate' is deprecated [-Wdeprecated-declarations]
+C/C++:   801 |   T *new_ptr = this->allocate(new_capacity, FMT_NULL);
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:755:12: note: in instantiation of member function 'fmt::internal::MemoryBuffer<wchar_t, 500>::grow' requested here
+C/C++:   755 |   explicit MemoryBuffer(const Allocator &alloc = Allocator())
+C/C++:       |            ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3142:35: note: in instantiation of member function 'fmt::internal::MemoryBuffer<wchar_t, 500>::MemoryBuffer' requested here
+C/C++:  3142 |     : BasicWriter<Char>(buffer_), buffer_(alloc) {}
+C/C++:       |                                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3299:17: note: in instantiation of member function 'fmt::BasicMemoryWriter<wchar_t>::BasicMemoryWriter' requested here
+C/C++:  3299 |   WMemoryWriter w;
+C/C++:       |                 ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:154:55: note: 'allocate' has been explicitly marked deprecated here
+C/C++:   154 |   _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_IN_CXX17 _Tp*
+C/C++:       |                                                       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: 2 warnings generated.
+
+> Task :terminal:compileReleaseLibraryResources FROM-CACHE
+> Task :app:syncMainAssets
+> Task :app:verifyExternallyBuiltNativeLibraries
+> Task :app:preBuild
+> Task :app:preNightlyBuild
+> Task :app:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:lintVitalAnalyzeRelease
+> Task :fbx:verifyReleaseResources FROM-CACHE
+
+> Task :dragonbones:buildCMakeRelWithDebInfo[armeabi-v7a]
+C/C++: ninja: Entering directory `/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/RelWithDebInfo/4c126p6p/armeabi-v7a'
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.cpp:1:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.h:26:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/../parser/JSONDataParser.h:5:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/3rdParty/rapidjson/document.h:102:19: warning: 'iterator<std::random_access_iterator_tag, rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' is deprecated [-Wdeprecated-declarations]
+C/C++:   102 |     : public std::iterator<std::random_access_iterator_tag
+C/C++:       |                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/3rdParty/rapidjson/document.h:548:22: note: in instantiation of template class 'rapidjson::GenericMemberIterator<false, rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>' requested here
+C/C++:   548 |     typedef typename GenericMemberIterator<false,Encoding,Allocator>::Iterator MemberIterator;  //!< Member iterator for iterating in object.
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/../parser/JSONDataParser.h:28:20: note: in instantiation of template class 'rapidjson::GenericValue<rapidjson::UTF8<>>' requested here
+C/C++:    28 |         if (rawData.HasMember(key))
+C/C++:       |                    ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__iterator/iterator.h:23:29: note: 'iterator<std::random_access_iterator_tag, rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' has been explicitly marked deprecated here
+C/C++:    23 | struct _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 iterator {
+C/C++:       |                             ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.cpp:1:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.h:26:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/../parser/JSONDataParser.h:5:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/3rdParty/rapidjson/document.h:110:18: warning: 'iterator<std::random_access_iterator_tag, rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' is deprecated [-Wdeprecated-declarations]
+C/C++:   110 |     typedef std::iterator<std::random_access_iterator_tag,ValueType> BaseType;
+C/C++:       |                  ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__iterator/iterator.h:23:29: note: 'iterator<std::random_access_iterator_tag, rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' has been explicitly marked deprecated here
+C/C++:    23 | struct _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 iterator {
+C/C++:       |                             ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.cpp:1:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.h:26:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/../parser/JSONDataParser.h:5:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/3rdParty/rapidjson/document.h:102:19: warning: 'iterator<std::random_access_iterator_tag, const rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' is deprecated [-Wdeprecated-declarations]
+C/C++:   102 |     : public std::iterator<std::random_access_iterator_tag
+C/C++:       |                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/3rdParty/rapidjson/document.h:549:22: note: in instantiation of template class 'rapidjson::GenericMemberIterator<true, rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>' requested here
+C/C++:   549 |     typedef typename GenericMemberIterator<true,Encoding,Allocator>::Iterator ConstMemberIterator;  //!< Constant member iterator for iterating in object.
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/../parser/JSONDataParser.h:28:20: note: in instantiation of template class 'rapidjson::GenericValue<rapidjson::UTF8<>>' requested here
+C/C++:    28 |         if (rawData.HasMember(key))
+C/C++:       |                    ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__iterator/iterator.h:23:29: note: 'iterator<std::random_access_iterator_tag, const rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' has been explicitly marked deprecated here
+C/C++:    23 | struct _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 iterator {
+C/C++:       |                             ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.cpp:1:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.h:26:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/../parser/JSONDataParser.h:5:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/3rdParty/rapidjson/document.h:110:18: warning: 'iterator<std::random_access_iterator_tag, const rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' is deprecated [-Wdeprecated-declarations]
+C/C++:   110 |     typedef std::iterator<std::random_access_iterator_tag,ValueType> BaseType;
+C/C++:       |                  ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__iterator/iterator.h:23:29: note: 'iterator<std::random_access_iterator_tag, const rapidjson::GenericMember<rapidjson::UTF8<>, rapidjson::MemoryPoolAllocator<>>>' has been explicitly marked deprecated here
+C/C++:    23 | struct _LIBCPP_TEMPLATE_VIS _LIBCPP_DEPRECATED_IN_CXX17 iterator {
+C/C++:       |                             ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/.cxx/operit_deps/dragonbones_cpp-f696143045e07b7c4c4590bdd95534e9e8074b37-src/DragonBones/src/dragonBones/factory/BaseFactory.cpp:216:95: warning: expression result unused [-Wunused-value]
+C/C++:   216 |         dataPackage != nullptr ? dataPackage->dataName : displayData->parent->parent->parent->name;
+C/C++:       |                                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ^~~~
+C/C++: 5 warnings generated.
+
+> Task :fbx:assembleRelease
+> Task :app:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :showerclient:verifyReleaseResources
+> Task :showerclient:assembleRelease
+
+> Task :mmd:buildCMakeRelWithDebInfo[arm64-v8a]
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Model/MMD/PMXModel.cpp:14:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Base/Log.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/spdlog.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/common.h:46:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/fmt.h:21:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:801:22: warning: 'allocate' is deprecated [-Wdeprecated-declarations]
+C/C++:   801 |   T *new_ptr = this->allocate(new_capacity, FMT_NULL);
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:757:3: note: in instantiation of member function 'fmt::internal::MemoryBuffer<char, 500>::grow' requested here
+C/C++:   757 |   ~MemoryBuffer() { deallocate(); }
+C/C++:       |   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3136:7: note: in instantiation of member function 'fmt::internal::MemoryBuffer<char, 500>::~MemoryBuffer' requested here
+C/C++:  3136 | class BasicMemoryWriter : public BasicWriter<Char> {
+C/C++:       |       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:154:55: note: 'allocate' has been explicitly marked deprecated here
+C/C++:   154 |   _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_IN_CXX17 _Tp*
+C/C++:       |                                                       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Model/MMD/PMXModel.cpp:14:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/src/Saba/Base/Log.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/spdlog.h:13:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/common.h:46:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/fmt.h:21:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:801:22: warning: 'allocate' is deprecated [-Wdeprecated-declarations]
+C/C++:   801 |   T *new_ptr = this->allocate(new_capacity, FMT_NULL);
+C/C++:       |                      ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:755:12: note: in instantiation of member function 'fmt::internal::MemoryBuffer<wchar_t, 500>::grow' requested here
+C/C++:   755 |   explicit MemoryBuffer(const Allocator &alloc = Allocator())
+C/C++:       |            ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3142:35: note: in instantiation of member function 'fmt::internal::MemoryBuffer<wchar_t, 500>::MemoryBuffer' requested here
+C/C++:  3142 |     : BasicWriter<Char>(buffer_), buffer_(alloc) {}
+C/C++:       |                                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/mmd/.cxx/operit_deps/saba-29b8efa8b31c8e746f9a88020fb0ad9dcdcf3332-src/external/spdlog/include/spdlog/fmt/bundled/format.h:3299:17: note: in instantiation of member function 'fmt::BasicMemoryWriter<wchar_t>::BasicMemoryWriter' requested here
+C/C++:  3299 |   WMemoryWriter w;
+C/C++:       |                 ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:154:55: note: 'allocate' has been explicitly marked deprecated here
+C/C++:   154 |   _LIBCPP_NODISCARD_AFTER_CXX17 _LIBCPP_HIDE_FROM_ABI _LIBCPP_DEPRECATED_IN_CXX17 _Tp*
+C/C++:       |                                                       ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: 2 warnings generated.
+
+> Task :terminal:mergeReleaseResources FROM-CACHE
+
+> Task :app:buildCMakeRelWithDebInfo[arm64-v8a]
+C/C++: ninja: Entering directory `/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a'
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/context-fst.cc:7:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/context-fst.h:15:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/fstlib.h:33:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/compact-fst.h:19:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/cache.h:19:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:38:39: warning: 'rebind<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' is deprecated [-Wdeprecated-declarations]
+C/C++:    38 |       typename ArcAllocator::template rebind<VectorState<Arc, M>>::other;
+C/C++:       |                                       ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:132:51: note: in instantiation of template class 'fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>' requested here
+C/C++:   132 | class VectorFstBaseImpl : public FstImpl<typename S::Arc> {
+C/C++:       |                                                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:267:30: note: in instantiation of template class 'fst::internal::VectorFstBaseImpl<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' requested here
+C/C++:   267 | class VectorFstImpl : public VectorFstBaseImpl<S> {
+C/C++:       |                              ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/mutable-fst.h:267:55: note: in instantiation of template class 'fst::internal::VectorFstImpl<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' requested here
+C/C++:   267 | template <class Impl, class FST = MutableFst<typename Impl::Arc>>
+C/C++:       |                                                       ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:430:26: note: in instantiation of default argument for 'ImplToMutableFst<internal::VectorFstImpl<VectorState<ArcTpl<TropicalWeightTpl<float>>, allocator<ArcTpl<TropicalWeightTpl<float>>>>>>' required here
+C/C++:   430 | class VectorFst : public ImplToMutableFst<internal::VectorFstImpl<S>> {
+C/C++:       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/fstext-utils-inl.h:37:3: note: in instantiation of template class 'fst::VectorFst<fst::ArcTpl<fst::TropicalWeightTpl<float>>>' requested here
+C/C++:    37 |   ArcSort(fst, ILabelCompare<StdArc>());  // helps DeterminizeStar to be faster.
+C/C++:       |   ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:143:10: note: 'rebind<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' has been explicitly marked deprecated here
+C/C++:   143 |   struct _LIBCPP_DEPRECATED_IN_CXX17 rebind {
+C/C++:       |          ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/context-fst.cc:7:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/context-fst.h:15:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/fstlib.h:33:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/compact-fst.h:19:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/cache.h:19:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:38:39: warning: 'rebind<fst::VectorState<fst::ArcTpl<fst::LogWeightTpl<float>>>>' is deprecated [-Wdeprecated-declarations]
+C/C++:    38 |       typename ArcAllocator::template rebind<VectorState<Arc, M>>::other;
+C/C++:       |                                       ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:132:51: note: in instantiation of template class 'fst::VectorState<fst::ArcTpl<fst::LogWeightTpl<float>>>' requested here
+C/C++:   132 | class VectorFstBaseImpl : public FstImpl<typename S::Arc> {
+C/C++:       |                                                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:267:30: note: in instantiation of template class 'fst::internal::VectorFstBaseImpl<fst::VectorState<fst::ArcTpl<fst::LogWeightTpl<float>>>>' requested here
+C/C++:   267 | class VectorFstImpl : public VectorFstBaseImpl<S> {
+C/C++:       |                              ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/mutable-fst.h:267:55: note: in instantiation of template class 'fst::internal::VectorFstImpl<fst::VectorState<fst::ArcTpl<fst::LogWeightTpl<float>>>>' requested here
+C/C++:   267 | template <class Impl, class FST = MutableFst<typename Impl::Arc>>
+C/C++:       |                                                       ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:430:26: note: in instantiation of default argument for 'ImplToMutableFst<internal::VectorFstImpl<VectorState<ArcTpl<LogWeightTpl<float>>, allocator<ArcTpl<LogWeightTpl<float>>>>>>' required here
+C/C++:   430 | class VectorFst : public ImplToMutableFst<internal::VectorFstImpl<S>> {
+C/C++:       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/fstext-utils-inl.h:39:11: note: in instantiation of template class 'fst::VectorFst<fst::ArcTpl<fst::LogWeightTpl<float>>>' requested here
+C/C++:    39 |       new VectorFst<LogArc>;  // Want to determinize in log semiring.
+C/C++:       |           ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:143:10: note: 'rebind<fst::VectorState<fst::ArcTpl<fst::LogWeightTpl<float>>>>' has been explicitly marked deprecated here
+C/C++:   143 |   struct _LIBCPP_DEPRECATED_IN_CXX17 rebind {
+C/C++:       |          ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: 2 warnings generated.
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/kaldi-fst-io.cc:10:
+C/C++: In file included from /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/kaldi-fst-io.h:17:
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:38:39: warning: 'rebind<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' is deprecated [-Wdeprecated-declarations]
+C/C++:    38 |       typename ArcAllocator::template rebind<VectorState<Arc, M>>::other;
+C/C++:       |                                       ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:132:51: note: in instantiation of template class 'fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>' requested here
+C/C++:   132 | class VectorFstBaseImpl : public FstImpl<typename S::Arc> {
+C/C++:       |                                                   ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:267:30: note: in instantiation of template class 'fst::internal::VectorFstBaseImpl<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' requested here
+C/C++:   267 | class VectorFstImpl : public VectorFstBaseImpl<S> {
+C/C++:       |                              ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/mutable-fst.h:267:55: note: in instantiation of template class 'fst::internal::VectorFstImpl<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' requested here
+C/C++:   267 | template <class Impl, class FST = MutableFst<typename Impl::Arc>>
+C/C++:       |                                                       ^
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/openfst-src/src/include/fst/vector-fst.h:430:26: note: in instantiation of default argument for 'ImplToMutableFst<internal::VectorFstImpl<VectorState<ArcTpl<TropicalWeightTpl<float>>, allocator<ArcTpl<TropicalWeightTpl<float>>>>>>' required here
+C/C++:   430 | class VectorFst : public ImplToMutableFst<internal::VectorFstImpl<S>> {
+C/C++:       |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C/C++: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/.cxx/RelWithDebInfo/574s151n/arm64-v8a/_deps/kaldifst-src/kaldifst/csrc/kaldi-fst-io.cc:29:28: note: in instantiation of template class 'fst::VectorFst<fst::ArcTpl<fst::TropicalWeightTpl<float>>>' requested here
+C/C++:    29 |   VectorFst<StdArc> *fst = VectorFst<StdArc>::Read(ki.Stream(), ropts);
+C/C++:       |                            ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__memory/allocator.h:143:10: note: 'rebind<fst::VectorState<fst::ArcTpl<fst::TropicalWeightTpl<float>>>>' has been explicitly marked deprecated here
+C/C++:   143 |   struct _LIBCPP_DEPRECATED_IN_CXX17 rebind {
+C/C++:       |          ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:942:41: note: expanded from macro '_LIBCPP_DEPRECATED_IN_CXX17'
+C/C++:   942 | #    define _LIBCPP_DEPRECATED_IN_CXX17 _LIBCPP_DEPRECATED
+C/C++:       |                                         ^
+C/C++: /home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1/__config:915:49: note: expanded from macro '_LIBCPP_DEPRECATED'
+C/C++:   915 | #      define _LIBCPP_DEPRECATED __attribute__((__deprecated__))
+C/C++:       |                                                 ^
+C/C++: 1 warning generated.
+
+> Task :terminal:verifyReleaseResources

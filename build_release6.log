@@ -1,0 +1,391 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: BuildType(clone): resValue 'string/app_name' value is being replaced.
+
+> Task :dragonbones:preBuild UP-TO-DATE
+> Task :dragonbones:preReleaseBuild UP-TO-DATE
+> Task :app:objectboxPrepareBuild
+> Task :dragonbones:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :dragonbones:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :dragonbones:configureCMakeRelWithDebInfo[armeabi-v7a]
+> Task :dragonbones:buildCMakeRelWithDebInfo[armeabi-v7a]
+> Task :dragonbones:configureCMakeRelWithDebInfo[x86]
+> Task :dragonbones:buildCMakeRelWithDebInfo[x86]
+> Task :dragonbones:configureCMakeRelWithDebInfo[x86_64]
+> Task :dragonbones:buildCMakeRelWithDebInfo[x86_64]
+> Task :dragonbones:mergeReleaseJniLibFolders
+> Task :dragonbones:mergeReleaseNativeLibs
+> Task :dragonbones:copyReleaseJniLibsProjectOnly
+> Task :fbx:preBuild UP-TO-DATE
+> Task :fbx:preReleaseBuild UP-TO-DATE
+> Task :fbx:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:mergeReleaseJniLibFolders
+> Task :fbx:mergeReleaseNativeLibs
+> Task :fbx:copyReleaseJniLibsProjectOnly
+> Task :llama:preBuild UP-TO-DATE
+> Task :llama:preReleaseBuild UP-TO-DATE
+> Task :llama:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :llama:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :llama:mergeReleaseJniLibFolders
+> Task :app:syncSttModelAssets
+> Task :llama:mergeReleaseNativeLibs
+> Task :llama:copyReleaseJniLibsProjectOnly
+> Task :mmd:preBuild UP-TO-DATE
+> Task :mmd:preReleaseBuild UP-TO-DATE
+> Task :mmd:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :mmd:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :mmd:mergeReleaseJniLibFolders
+> Task :mmd:mergeReleaseNativeLibs
+> Task :mmd:copyReleaseJniLibsProjectOnly
+> Task :mnn:preBuild UP-TO-DATE
+> Task :mnn:preReleaseBuild UP-TO-DATE
+> Task :mnn:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :app:syncMainAssets
+> Task :app:verifyExternallyBuiltNativeLibraries
+> Task :app:preBuild
+> Task :app:preNightlyBuild
+> Task :app:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :app:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :app:preReleaseBuild
+> Task :app:mergeReleaseJniLibFolders
+> Task :quickjs:preBuild UP-TO-DATE
+> Task :quickjs:preReleaseBuild UP-TO-DATE
+> Task :quickjs:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :quickjs:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :quickjs:mergeReleaseJniLibFolders
+> Task :quickjs:mergeReleaseNativeLibs
+> Task :quickjs:copyReleaseJniLibsProjectOnly
+> Task :showerclient:preBuild UP-TO-DATE
+> Task :showerclient:preReleaseBuild UP-TO-DATE
+> Task :showerclient:mergeReleaseJniLibFolders
+> Task :showerclient:mergeReleaseNativeLibs NO-SOURCE
+> Task :showerclient:copyReleaseJniLibsProjectOnly
+> Task :terminal:preBuild UP-TO-DATE
+> Task :terminal:preReleaseBuild UP-TO-DATE
+> Task :terminal:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:mergeReleaseJniLibFolders
+> Task :terminal:mergeReleaseNativeLibs
+> Task :mnn:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:copyReleaseJniLibsProjectOnly
+> Task :dragonbones:prepareReleaseArtProfile UP-TO-DATE
+> Task :fbx:prepareReleaseArtProfile UP-TO-DATE
+> Task :llama:prepareReleaseArtProfile UP-TO-DATE
+> Task :mmd:prepareReleaseArtProfile UP-TO-DATE
+> Task :quickjs:prepareReleaseArtProfile UP-TO-DATE
+> Task :showerclient:prepareReleaseArtProfile UP-TO-DATE
+> Task :terminal:prepareReleaseArtProfile UP-TO-DATE
+> Task :dragonbones:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mnn:mergeReleaseJniLibFolders
+> Task :dragonbones:generateReleaseResValues FROM-CACHE
+> Task :dragonbones:generateReleaseResources FROM-CACHE
+> Task :mnn:prepareReleaseArtProfile UP-TO-DATE
+> Task :mnn:mergeReleaseNativeLibs
+> Task :mnn:copyReleaseJniLibsProjectOnly
+> Task :dragonbones:packageReleaseResources FROM-CACHE
+> Task :dragonbones:processReleaseNavigationResources FROM-CACHE
+> Task :dragonbones:parseReleaseLocalResources FROM-CACHE
+> Task :dragonbones:generateReleaseRFile FROM-CACHE
+> Task :dragonbones:compileReleaseKotlin FROM-CACHE
+> Task :dragonbones:javaPreCompileRelease FROM-CACHE
+> Task :dragonbones:compileReleaseJavaWithJavac NO-SOURCE
+> Task :dragonbones:bundleLibRuntimeToDirRelease
+> Task :app:mergeReleaseArtProfile
+> Task :terminal:compileReleaseAidl FROM-CACHE
+> Task :terminal:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :terminal:generateReleaseResValues FROM-CACHE
+> Task :terminal:generateReleaseResources FROM-CACHE
+> Task :terminal:packageReleaseResources FROM-CACHE
+> Task :app:expandReleaseL8ArtProfileWildcards FROM-CACHE
+> Task :terminal:processReleaseNavigationResources FROM-CACHE
+> Task :terminal:parseReleaseLocalResources FROM-CACHE
+> Task :terminal:generateReleaseRFile FROM-CACHE
+> Task :terminal:compileReleaseKotlin FROM-CACHE
+> Task :terminal:javaPreCompileRelease FROM-CACHE
+> Task :app:mergeReleaseNativeLibs
+> Task :terminal:compileReleaseJavaWithJavac FROM-CACHE
+
+> Task :app:stripReleaseDebugSymbols
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libavdevice.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libavfilter.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libavformat.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libavutil.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libavcodec.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libc++_shared.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libffmpegkit.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libffmpegkit_abidetect.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libsudo.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libswresample.so': The file was not recognized as a valid object file
+
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/app/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libswscale.so': The file was not recognized as a valid object file
+
+Unable to strip the following libraries, packaging them as they are: libavcodec.so, libavdevice.so, libavfilter.so, libavformat.so, libavutil.so, libc++_shared.so, libffmpegkit.so, libffmpegkit_abidetect.so, libsudo.so, libswresample.so, libswscale.so. Run with --info option to learn more.
+
+> Task :app:extractReleaseNativeSymbolTables FROM-CACHE
+> Task :terminal:bundleLibRuntimeToDirRelease
+> Task :mnn:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mnn:generateReleaseResValues FROM-CACHE
+> Task :mnn:generateReleaseResources FROM-CACHE
+> Task :mnn:packageReleaseResources FROM-CACHE
+> Task :mnn:processReleaseNavigationResources FROM-CACHE
+> Task :mnn:parseReleaseLocalResources FROM-CACHE
+> Task :mnn:generateReleaseRFile FROM-CACHE
+> Task :app:mergeReleaseNativeDebugMetadata
+> Task :llama:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :llama:generateReleaseResValues FROM-CACHE
+> Task :llama:generateReleaseResources FROM-CACHE
+> Task :llama:packageReleaseResources FROM-CACHE
+> Task :llama:processReleaseNavigationResources FROM-CACHE
+> Task :llama:parseReleaseLocalResources FROM-CACHE
+> Task :llama:generateReleaseRFile FROM-CACHE
+> Task :llama:compileReleaseKotlin FROM-CACHE
+> Task :llama:javaPreCompileRelease FROM-CACHE
+> Task :llama:compileReleaseJavaWithJavac NO-SOURCE
+> Task :mnn:compileReleaseKotlin FROM-CACHE
+> Task :mnn:javaPreCompileRelease FROM-CACHE
+> Task :mnn:compileReleaseJavaWithJavac NO-SOURCE
+> Task :llama:bundleLibRuntimeToDirRelease
+> Task :mmd:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mmd:generateReleaseResValues FROM-CACHE
+> Task :mmd:generateReleaseResources FROM-CACHE
+> Task :mmd:packageReleaseResources FROM-CACHE
+> Task :mmd:processReleaseNavigationResources FROM-CACHE
+> Task :mmd:parseReleaseLocalResources FROM-CACHE
+> Task :mmd:generateReleaseRFile FROM-CACHE
+> Task :mnn:bundleLibRuntimeToDirRelease
+> Task :fbx:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :fbx:generateReleaseResValues FROM-CACHE
+> Task :fbx:generateReleaseResources FROM-CACHE
+> Task :fbx:packageReleaseResources FROM-CACHE
+> Task :fbx:processReleaseNavigationResources FROM-CACHE
+> Task :fbx:parseReleaseLocalResources FROM-CACHE
+> Task :fbx:generateReleaseRFile FROM-CACHE
+> Task :mmd:compileReleaseKotlin FROM-CACHE
+> Task :mmd:javaPreCompileRelease FROM-CACHE
+> Task :mmd:compileReleaseJavaWithJavac NO-SOURCE
+> Task :mmd:bundleLibRuntimeToDirRelease
+> Task :showerclient:compileReleaseAidl NO-SOURCE
+> Task :showerclient:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :showerclient:generateReleaseResValues FROM-CACHE
+> Task :showerclient:generateReleaseResources FROM-CACHE
+> Task :showerclient:packageReleaseResources FROM-CACHE
+> Task :showerclient:processReleaseNavigationResources FROM-CACHE
+> Task :showerclient:parseReleaseLocalResources FROM-CACHE
+> Task :showerclient:generateReleaseRFile FROM-CACHE
+> Task :fbx:compileReleaseKotlin FROM-CACHE
+> Task :fbx:javaPreCompileRelease FROM-CACHE
+> Task :fbx:compileReleaseJavaWithJavac NO-SOURCE
+> Task :fbx:bundleLibRuntimeToDirRelease
+> Task :quickjs:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :quickjs:generateReleaseResValues FROM-CACHE
+> Task :quickjs:generateReleaseResources FROM-CACHE
+> Task :quickjs:packageReleaseResources FROM-CACHE
+> Task :quickjs:processReleaseNavigationResources FROM-CACHE
+> Task :quickjs:parseReleaseLocalResources FROM-CACHE
+> Task :quickjs:generateReleaseRFile FROM-CACHE
+> Task :showerclient:compileReleaseKotlin FROM-CACHE
+> Task :showerclient:javaPreCompileRelease FROM-CACHE
+> Task :showerclient:compileReleaseJavaWithJavac FROM-CACHE
+> Task :quickjs:compileReleaseKotlin FROM-CACHE
+> Task :quickjs:javaPreCompileRelease FROM-CACHE
+> Task :quickjs:compileReleaseJavaWithJavac NO-SOURCE
+> Task :quickjs:bundleLibRuntimeToDirRelease
+> Task :showerclient:bundleLibRuntimeToDirRelease
+> Task :dragonbones:writeReleaseAarMetadata
+> Task :fbx:writeReleaseAarMetadata
+> Task :app:buildKotlinToolingMetadata
+> Task :app:checkReleaseDuplicateClasses
+> Task :llama:writeReleaseAarMetadata
+> Task :mmd:writeReleaseAarMetadata
+> Task :mnn:writeReleaseAarMetadata
+> Task :app:compileReleaseAidl FROM-CACHE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :quickjs:writeReleaseAarMetadata
+> Task :showerclient:writeReleaseAarMetadata
+> Task :terminal:writeReleaseAarMetadata
+> Task :app:generateReleaseBuildConfig FROM-CACHE
+> Task :dragonbones:extractDeepLinksRelease FROM-CACHE
+> Task :dragonbones:processReleaseManifest FROM-CACHE
+> Task :fbx:extractDeepLinksRelease FROM-CACHE
+> Task :fbx:processReleaseManifest FROM-CACHE
+> Task :llama:extractDeepLinksRelease FROM-CACHE
+> Task :llama:processReleaseManifest FROM-CACHE
+> Task :mmd:extractDeepLinksRelease FROM-CACHE
+> Task :mmd:processReleaseManifest FROM-CACHE
+> Task :mnn:extractDeepLinksRelease FROM-CACHE
+> Task :mnn:processReleaseManifest FROM-CACHE
+> Task :quickjs:extractDeepLinksRelease FROM-CACHE
+> Task :quickjs:processReleaseManifest FROM-CACHE
+> Task :showerclient:extractDeepLinksRelease FROM-CACHE
+> Task :showerclient:processReleaseManifest FROM-CACHE
+> Task :terminal:extractDeepLinksRelease FROM-CACHE
+> Task :terminal:processReleaseManifest FROM-CACHE
+> Task :dragonbones:compileReleaseLibraryResources FROM-CACHE
+> Task :fbx:compileReleaseLibraryResources FROM-CACHE
+> Task :llama:compileReleaseLibraryResources FROM-CACHE
+> Task :mmd:compileReleaseLibraryResources FROM-CACHE
+> Task :mnn:compileReleaseLibraryResources FROM-CACHE
+> Task :quickjs:compileReleaseLibraryResources FROM-CACHE
+> Task :showerclient:compileReleaseLibraryResources FROM-CACHE
+> Task :terminal:compileReleaseLibraryResources FROM-CACHE
+> Task :dragonbones:bundleLibCompileToJarRelease
+> Task :app:checkReleaseAarMetadata
+> Task :app:processReleaseNavigationResources FROM-CACHE
+> Task :app:compileReleaseNavigationResources FROM-CACHE
+> Task :app:generateReleaseResValues FROM-CACHE
+> Task :fbx:bundleLibCompileToJarRelease
+> Task :llama:bundleLibCompileToJarRelease
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:generateReleaseResources FROM-CACHE
+> Task :mmd:bundleLibCompileToJarRelease
+> Task :mnn:bundleLibCompileToJarRelease
+> Task :quickjs:bundleLibCompileToJarRelease
+> Task :showerclient:bundleLibCompileToJarRelease
+> Task :terminal:bundleLibCompileToJarRelease
+> Task :dragonbones:bundleLibRuntimeToJarRelease
+> Task :fbx:bundleLibRuntimeToJarRelease
+> Task :llama:bundleLibRuntimeToJarRelease
+> Task :mmd:bundleLibRuntimeToJarRelease
+> Task :mnn:bundleLibRuntimeToJarRelease
+> Task :quickjs:bundleLibRuntimeToJarRelease
+> Task :showerclient:bundleLibRuntimeToJarRelease
+> Task :terminal:bundleLibRuntimeToJarRelease
+> Task :app:mergeReleaseResources FROM-CACHE
+> Task :app:packageReleaseResources FROM-CACHE
+> Task :app:parseReleaseLocalResources FROM-CACHE
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease FROM-CACHE
+> Task :app:processReleaseMainManifest FROM-CACHE
+> Task :app:processReleaseManifest FROM-CACHE
+> Task :app:processReleaseManifestForPackage FROM-CACHE
+> Task :dragonbones:mergeReleaseShaders
+> Task :dragonbones:compileReleaseShaders NO-SOURCE
+> Task :dragonbones:generateReleaseAssets UP-TO-DATE
+> Task :dragonbones:mergeReleaseAssets
+> Task :fbx:mergeReleaseShaders
+> Task :fbx:compileReleaseShaders NO-SOURCE
+> Task :fbx:generateReleaseAssets UP-TO-DATE
+> Task :fbx:mergeReleaseAssets
+> Task :app:processReleaseResources FROM-CACHE
+> Task :llama:mergeReleaseShaders
+> Task :llama:compileReleaseShaders NO-SOURCE
+> Task :llama:generateReleaseAssets UP-TO-DATE
+> Task :llama:mergeReleaseAssets
+> Task :mmd:mergeReleaseShaders
+> Task :mmd:compileReleaseShaders NO-SOURCE
+> Task :mmd:generateReleaseAssets UP-TO-DATE
+> Task :mmd:mergeReleaseAssets
+> Task :mnn:mergeReleaseShaders
+> Task :mnn:compileReleaseShaders NO-SOURCE
+> Task :mnn:generateReleaseAssets UP-TO-DATE
+> Task :mnn:mergeReleaseAssets
+> Task :quickjs:mergeReleaseShaders
+> Task :quickjs:compileReleaseShaders NO-SOURCE
+> Task :quickjs:generateReleaseAssets UP-TO-DATE
+> Task :quickjs:mergeReleaseAssets
+> Task :showerclient:mergeReleaseShaders
+> Task :showerclient:compileReleaseShaders NO-SOURCE
+> Task :showerclient:generateReleaseAssets UP-TO-DATE
+> Task :showerclient:mergeReleaseAssets
+> Task :terminal:mergeReleaseShaders
+> Task :terminal:compileReleaseShaders NO-SOURCE
+> Task :terminal:generateReleaseAssets UP-TO-DATE
+> Task :terminal:mergeReleaseAssets
+> Task :dragonbones:processReleaseJavaRes
+> Task :dragonbones:createFullJarRelease
+> Task :dragonbones:extractProguardFiles
+> Task :dragonbones:generateReleaseLintModel
+> Task :dragonbones:prepareLintJarForPublish
+> Task :fbx:processReleaseJavaRes
+> Task :fbx:createFullJarRelease
+> Task :fbx:extractProguardFiles
+> Task :fbx:generateReleaseLintModel
+> Task :fbx:prepareLintJarForPublish UP-TO-DATE
+> Task :llama:processReleaseJavaRes
+> Task :llama:createFullJarRelease
+> Task :llama:extractProguardFiles
+> Task :llama:generateReleaseLintModel
+> Task :llama:prepareLintJarForPublish
+> Task :mmd:processReleaseJavaRes
+> Task :mmd:createFullJarRelease
+> Task :mmd:extractProguardFiles
+> Task :mmd:generateReleaseLintModel
+> Task :mmd:prepareLintJarForPublish
+> Task :mnn:processReleaseJavaRes
+> Task :mnn:createFullJarRelease
+> Task :mnn:extractProguardFiles
+> Task :mnn:generateReleaseLintModel
+> Task :mnn:prepareLintJarForPublish
+> Task :quickjs:processReleaseJavaRes
+> Task :quickjs:createFullJarRelease
+> Task :quickjs:extractProguardFiles
+> Task :quickjs:generateReleaseLintModel
+> Task :quickjs:prepareLintJarForPublish
+> Task :showerclient:processReleaseJavaRes
+> Task :showerclient:createFullJarRelease
+> Task :showerclient:extractProguardFiles
+> Task :showerclient:generateReleaseLintModel
+> Task :showerclient:prepareLintJarForPublish UP-TO-DATE
+> Task :terminal:processReleaseJavaRes
+> Task :terminal:createFullJarRelease
+> Task :terminal:extractProguardFiles
+> Task :app:kaptGenerateStubsReleaseKotlin
+> Task :terminal:generateReleaseLintModel
+> Task :terminal:prepareLintJarForPublish UP-TO-DATE
+> Task :dragonbones:checkReleaseAarMetadata
+> Task :dragonbones:stripReleaseDebugSymbols
+> Task :dragonbones:copyReleaseJniLibsProjectAndLocalJars
+> Task :dragonbones:extractDeepLinksForAarRelease FROM-CACHE
+> Task :dragonbones:extractReleaseAnnotations
+> Task :dragonbones:mergeReleaseGeneratedProguardFiles
+
+> Task :dragonbones:mergeReleaseConsumerProguardFiles
+Supplied consumer proguard configuration does not exist: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/avator/dragonbones/consumer-rules.pro
+
+> Task :dragonbones:mergeReleaseJavaResource
+> Task :dragonbones:syncReleaseLibJars
+> Task :dragonbones:bundleReleaseLocalLintAar
+> Task :terminal:checkReleaseAarMetadata
+
+> Task :terminal:stripReleaseDebugSymbols
+/home/user/Android/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-strip: error: '/home/user/Doubao/chats/38441059405347074/Operit-1.12.1/terminal/build/intermediates/merged_native_libs/release/mergeReleaseNativeLibs/out/lib/arm64-v8a/libsudo.so': The file was not recognized as a valid object file
+
+Unable to strip the following libraries, packaging them as they are: libsudo.so. Run with --info option to learn more.
+
+> Task :terminal:copyReleaseJniLibsProjectAndLocalJars
+> Task :terminal:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :terminal:extractReleaseAnnotations
+> Task :terminal:mergeReleaseGeneratedProguardFiles
+
+> Task :terminal:mergeReleaseConsumerProguardFiles
+Supplied consumer proguard configuration does not exist: /home/user/Doubao/chats/38441059405347074/Operit-1.12.1/terminal/consumer-rules.pro
+
+> Task :terminal:mergeReleaseJavaResource
+> Task :terminal:syncReleaseLibJars
+> Task :terminal:bundleReleaseLocalLintAar
+> Task :mnn:checkReleaseAarMetadata
+> Task :mnn:stripReleaseDebugSymbols
+> Task :mnn:copyReleaseJniLibsProjectAndLocalJars
+> Task :mnn:extractDeepLinksForAarRelease FROM-CACHE
+> Task :mnn:extractReleaseAnnotations
+> Task :mnn:mergeReleaseGeneratedProguardFiles
+> Task :mnn:mergeReleaseConsumerProguardFiles
+> Task :mnn:mergeReleaseJavaResource
+> Task :mnn:syncReleaseLibJars
+> Task :mnn:bundleReleaseLocalLintAar
+> Task :app:javaPreCompileRelease FROM-CACHE
+> Task :app:desugarReleaseFileDependencies FROM-CACHE
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :app:mergeExtDexRelease

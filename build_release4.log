@@ -1,0 +1,216 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: BuildType(clone): resValue 'string/app_name' value is being replaced.
+
+> Task :dragonbones:preBuild UP-TO-DATE
+> Task :dragonbones:preReleaseBuild UP-TO-DATE
+> Task :app:objectboxPrepareBuild
+> Task :dragonbones:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :dragonbones:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :dragonbones:configureCMakeRelWithDebInfo[armeabi-v7a]
+> Task :dragonbones:buildCMakeRelWithDebInfo[armeabi-v7a]
+> Task :dragonbones:configureCMakeRelWithDebInfo[x86]
+> Task :dragonbones:buildCMakeRelWithDebInfo[x86]
+> Task :dragonbones:configureCMakeRelWithDebInfo[x86_64]
+> Task :dragonbones:buildCMakeRelWithDebInfo[x86_64]
+> Task :dragonbones:mergeReleaseJniLibFolders
+> Task :dragonbones:mergeReleaseNativeLibs
+> Task :dragonbones:copyReleaseJniLibsProjectOnly
+> Task :fbx:preBuild UP-TO-DATE
+> Task :fbx:preReleaseBuild UP-TO-DATE
+> Task :fbx:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :fbx:mergeReleaseJniLibFolders
+> Task :fbx:mergeReleaseNativeLibs
+> Task :fbx:copyReleaseJniLibsProjectOnly
+> Task :llama:preBuild UP-TO-DATE
+> Task :llama:preReleaseBuild UP-TO-DATE
+> Task :llama:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :llama:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :llama:mergeReleaseJniLibFolders
+> Task :llama:mergeReleaseNativeLibs
+> Task :llama:copyReleaseJniLibsProjectOnly
+> Task :mmd:preBuild UP-TO-DATE
+> Task :mmd:preReleaseBuild UP-TO-DATE
+> Task :mmd:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :mmd:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :mmd:mergeReleaseJniLibFolders
+> Task :mmd:mergeReleaseNativeLibs
+> Task :mmd:copyReleaseJniLibsProjectOnly
+> Task :mnn:preBuild UP-TO-DATE
+> Task :mnn:preReleaseBuild UP-TO-DATE
+> Task :mnn:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :app:syncSttModelAssets
+> Task :app:syncMainAssets
+> Task :app:verifyExternallyBuiltNativeLibraries
+> Task :app:preBuild
+> Task :app:preNightlyBuild
+> Task :app:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :app:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :app:preReleaseBuild
+> Task :app:mergeReleaseJniLibFolders
+> Task :quickjs:preBuild UP-TO-DATE
+> Task :quickjs:preReleaseBuild UP-TO-DATE
+> Task :quickjs:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :quickjs:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :quickjs:mergeReleaseJniLibFolders
+> Task :quickjs:mergeReleaseNativeLibs
+> Task :quickjs:copyReleaseJniLibsProjectOnly
+> Task :showerclient:preBuild UP-TO-DATE
+> Task :showerclient:preReleaseBuild UP-TO-DATE
+> Task :showerclient:mergeReleaseJniLibFolders
+> Task :showerclient:mergeReleaseNativeLibs NO-SOURCE
+> Task :showerclient:copyReleaseJniLibsProjectOnly
+> Task :terminal:preBuild UP-TO-DATE
+> Task :terminal:preReleaseBuild UP-TO-DATE
+> Task :terminal:configureCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:mergeReleaseJniLibFolders
+> Task :terminal:mergeReleaseNativeLibs
+> Task :terminal:copyReleaseJniLibsProjectOnly
+> Task :dragonbones:prepareReleaseArtProfile UP-TO-DATE
+> Task :fbx:prepareReleaseArtProfile UP-TO-DATE
+> Task :llama:prepareReleaseArtProfile UP-TO-DATE
+> Task :mmd:prepareReleaseArtProfile UP-TO-DATE
+> Task :quickjs:prepareReleaseArtProfile UP-TO-DATE
+> Task :showerclient:prepareReleaseArtProfile UP-TO-DATE
+> Task :terminal:prepareReleaseArtProfile UP-TO-DATE
+> Task :dragonbones:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :dragonbones:generateReleaseResValues FROM-CACHE
+> Task :dragonbones:generateReleaseResources FROM-CACHE
+> Task :dragonbones:packageReleaseResources FROM-CACHE
+> Task :dragonbones:processReleaseNavigationResources FROM-CACHE
+> Task :dragonbones:parseReleaseLocalResources FROM-CACHE
+> Task :dragonbones:generateReleaseRFile FROM-CACHE
+> Task :dragonbones:compileReleaseKotlin FROM-CACHE
+> Task :dragonbones:javaPreCompileRelease FROM-CACHE
+> Task :dragonbones:compileReleaseJavaWithJavac NO-SOURCE
+> Task :dragonbones:bundleLibRuntimeToDirRelease
+> Task :terminal:compileReleaseAidl FROM-CACHE
+> Task :terminal:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :terminal:generateReleaseResValues FROM-CACHE
+> Task :terminal:generateReleaseResources FROM-CACHE
+> Task :terminal:packageReleaseResources FROM-CACHE
+> Task :terminal:processReleaseNavigationResources FROM-CACHE
+> Task :terminal:parseReleaseLocalResources FROM-CACHE
+> Task :terminal:generateReleaseRFile FROM-CACHE
+> Task :terminal:compileReleaseKotlin FROM-CACHE
+> Task :terminal:javaPreCompileRelease FROM-CACHE
+> Task :terminal:compileReleaseJavaWithJavac FROM-CACHE
+> Task :mnn:buildCMakeRelWithDebInfo[arm64-v8a]
+> Task :terminal:bundleLibRuntimeToDirRelease
+> Task :llama:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :llama:generateReleaseResValues FROM-CACHE
+> Task :llama:generateReleaseResources FROM-CACHE
+> Task :llama:packageReleaseResources FROM-CACHE
+> Task :llama:processReleaseNavigationResources FROM-CACHE
+> Task :llama:parseReleaseLocalResources FROM-CACHE
+> Task :llama:generateReleaseRFile FROM-CACHE
+> Task :llama:compileReleaseKotlin FROM-CACHE
+> Task :llama:javaPreCompileRelease FROM-CACHE
+> Task :llama:compileReleaseJavaWithJavac NO-SOURCE
+> Task :llama:bundleLibRuntimeToDirRelease
+> Task :mmd:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :mmd:generateReleaseResValues FROM-CACHE
+> Task :mmd:generateReleaseResources FROM-CACHE
+> Task :mmd:packageReleaseResources FROM-CACHE
+> Task :mmd:processReleaseNavigationResources FROM-CACHE
+> Task :mmd:parseReleaseLocalResources FROM-CACHE
+> Task :mmd:generateReleaseRFile FROM-CACHE
+> Task :mmd:compileReleaseKotlin FROM-CACHE
+> Task :mmd:javaPreCompileRelease FROM-CACHE
+> Task :mmd:compileReleaseJavaWithJavac NO-SOURCE
+> Task :mmd:bundleLibRuntimeToDirRelease
+> Task :fbx:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :fbx:generateReleaseResValues FROM-CACHE
+> Task :fbx:generateReleaseResources FROM-CACHE
+> Task :fbx:packageReleaseResources FROM-CACHE
+> Task :fbx:processReleaseNavigationResources FROM-CACHE
+> Task :fbx:parseReleaseLocalResources FROM-CACHE
+> Task :fbx:generateReleaseRFile FROM-CACHE
+> Task :fbx:compileReleaseKotlin FROM-CACHE
+> Task :fbx:javaPreCompileRelease FROM-CACHE
+> Task :fbx:compileReleaseJavaWithJavac NO-SOURCE
+> Task :fbx:bundleLibRuntimeToDirRelease
+> Task :showerclient:compileReleaseAidl NO-SOURCE
+> Task :showerclient:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :showerclient:generateReleaseResValues FROM-CACHE
+> Task :showerclient:generateReleaseResources FROM-CACHE
+> Task :showerclient:packageReleaseResources FROM-CACHE
+> Task :showerclient:processReleaseNavigationResources FROM-CACHE
+> Task :showerclient:parseReleaseLocalResources FROM-CACHE
+> Task :showerclient:generateReleaseRFile FROM-CACHE
+> Task :showerclient:compileReleaseKotlin FROM-CACHE
+> Task :showerclient:javaPreCompileRelease FROM-CACHE
+> Task :showerclient:compileReleaseJavaWithJavac FROM-CACHE
+> Task :showerclient:bundleLibRuntimeToDirRelease
+> Task :quickjs:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :quickjs:generateReleaseResValues FROM-CACHE
+> Task :quickjs:generateReleaseResources FROM-CACHE
+> Task :quickjs:packageReleaseResources FROM-CACHE
+> Task :quickjs:processReleaseNavigationResources FROM-CACHE
+> Task :quickjs:parseReleaseLocalResources FROM-CACHE
+> Task :quickjs:generateReleaseRFile FROM-CACHE
+> Task :quickjs:compileReleaseKotlin FROM-CACHE
+> Task :quickjs:javaPreCompileRelease FROM-CACHE
+> Task :quickjs:compileReleaseJavaWithJavac NO-SOURCE
+> Task :quickjs:bundleLibRuntimeToDirRelease
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:buildKotlinToolingMetadata
+> Task :app:compileReleaseAidl FROM-CACHE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:generateReleaseBuildConfig FROM-CACHE
+> Task :dragonbones:writeReleaseAarMetadata
+> Task :fbx:writeReleaseAarMetadata
+> Task :llama:writeReleaseAarMetadata
+> Task :mmd:writeReleaseAarMetadata
+> Task :quickjs:writeReleaseAarMetadata
+> Task :showerclient:writeReleaseAarMetadata
+> Task :terminal:writeReleaseAarMetadata
+> Task :app:generateReleaseResValues FROM-CACHE
+> Task :app:generateReleaseResources FROM-CACHE
+> Task :app:packageReleaseResources FROM-CACHE
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease FROM-CACHE
+> Task :dragonbones:extractDeepLinksRelease FROM-CACHE
+> Task :dragonbones:processReleaseManifest FROM-CACHE
+> Task :fbx:extractDeepLinksRelease FROM-CACHE
+> Task :fbx:processReleaseManifest FROM-CACHE
+> Task :llama:extractDeepLinksRelease FROM-CACHE
+> Task :llama:processReleaseManifest FROM-CACHE
+> Task :mmd:extractDeepLinksRelease FROM-CACHE
+> Task :mmd:processReleaseManifest FROM-CACHE
+> Task :quickjs:extractDeepLinksRelease FROM-CACHE
+> Task :quickjs:processReleaseManifest FROM-CACHE
+> Task :showerclient:extractDeepLinksRelease FROM-CACHE
+> Task :showerclient:processReleaseManifest FROM-CACHE
+> Task :terminal:extractDeepLinksRelease FROM-CACHE
+> Task :terminal:processReleaseManifest FROM-CACHE
+> Task :dragonbones:compileReleaseLibraryResources FROM-CACHE
+> Task :fbx:compileReleaseLibraryResources FROM-CACHE
+> Task :llama:compileReleaseLibraryResources FROM-CACHE
+> Task :mmd:compileReleaseLibraryResources FROM-CACHE
+> Task :quickjs:compileReleaseLibraryResources FROM-CACHE
+> Task :showerclient:compileReleaseLibraryResources FROM-CACHE
+> Task :terminal:compileReleaseLibraryResources FROM-CACHE
+> Task :dragonbones:bundleLibCompileToJarRelease
+> Task :fbx:bundleLibCompileToJarRelease
+> Task :llama:bundleLibCompileToJarRelease
+> Task :mmd:bundleLibCompileToJarRelease
+> Task :quickjs:bundleLibCompileToJarRelease
+> Task :showerclient:bundleLibCompileToJarRelease
+> Task :terminal:bundleLibCompileToJarRelease
+> Task :app:javaPreCompileRelease FROM-CACHE
+> Task :dragonbones:bundleLibRuntimeToJarRelease
+> Task :fbx:bundleLibRuntimeToJarRelease
+> Task :llama:bundleLibRuntimeToJarRelease
+> Task :mmd:bundleLibRuntimeToJarRelease
+> Task :quickjs:bundleLibRuntimeToJarRelease
+> Task :showerclient:bundleLibRuntimeToJarRelease
+> Task :terminal:bundleLibRuntimeToJarRelease
+> Task :app:desugarReleaseFileDependencies FROM-CACHE
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :app:mergeExtDexRelease
