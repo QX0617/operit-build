@@ -79,7 +79,7 @@ object ThinkingContentExtractor {
      * 创建思考内容流，从原始流中过滤出 think 标签内的内容
      */
     private fun createThinkingStream(originalStream: Stream<String>): Stream<String> {
-        return stream { emit ->
+        return stream {
             var inThinkBlock = false
             var buffer = StringBuilder()
 
