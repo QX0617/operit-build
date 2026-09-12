@@ -31,20 +31,14 @@ jobs:
           SDK="$ANDROID_SDK_ROOT"
           SDKMGR="$SDK/cmdline-tools/latest/bin/sdkmanager"
           echo "SDK at: $SDK"
-          echo "sdkmanager at: $SDKMGR"
-          ls -la "$SDKMGR"
-          yes | "$SDKMGR" "platforms;android-36" "build-tools;36.0.0" "cmake;3.22.1"
+          yes | "$SDKMGR" "platforms;android-36" "build-tools;36.0.0" "ndk;27.2.12479018" "cmake;3.22.1"
           yes | "$SDKMGR" --licenses
-          echo "Installed:"
-          "$SDKMGR" --list_installed | grep -E "platforms|build-tools|cmake" || true
 
-      - name: Configure Gradle wrapper
+      - name: Configure Gradle
         run: |
           sed -i 's|distributionUrl=.*|distributionUrl=https\\://services.gradle.org/distributions/gradle-8.13-bin.zip|' gradle/wrapper/gradle-wrapper.properties
-          grep distributionUrl gradle/wrapper/gradle-wrapper.properties
-
-      - name: Create local.properties
-        run: |
+          # Reduce heap to 6GB for GitHub runner (7GB RAM total)
+          sed -i 's|org.gradle.jvmargs=.*|org.gradle.jvmargs=-Xmx6g -Dfile.encoding=UTF-8|' gradle.properties
           cat > local.properties << EOF
           sdk.dir=$ANDROID_SDK_ROOT
           RELEASE_STORE_FILE=release.keystore
@@ -56,14 +50,7 @@ jobs:
       - name: Generate release keystore
         run: |
           if [ ! -f release.keystore ]; then
-            keytool -genkeypair -v \
-              -keystore release.keystore \
-              -alias operit \
-              -keyalg RSA -keysize 2048 \
-              -validity 10000 \
-              -storepass operit123 \
-              -keypass operit123 \
-              -dname "CN=Operit, OU=Dev, O=Operit, L=NA, ST=NA, C=CN"
+            keytool -genkeypair -v -keystore release.keystore -alias operit -keyalg RSA -keysize 2048 -validity 10000 -storepass operit123 -keypass operit123 -dname "CN=Operit, OU=Dev, O=Operit, L=NA, ST=NA, C=CN"
           fi
 
       - name: Install npm dependencies
@@ -86,7 +73,6 @@ jobs:
             echo "Downloading $f..."
             curl -L --retry 5 -o "$DEST/$f" "$BASE/$f"
           done
-          find app/build/generated/stt-model-assets -type f -exec ls -lh {} \;
 
       - name: Build release APK
         run: |
