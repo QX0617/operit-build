@@ -28,12 +28,15 @@ jobs:
 
       - name: Install Android SDK packages
         run: |
-          echo "ANDROID_SDK_ROOT=$ANDROID_SDK_ROOT"
-          sdkmanager --list_installed 2>/dev/null | head -20
-          yes | sdkmanager "platforms;android-36" "build-tools;36.0.0" "cmake;3.22.1" > /dev/null 2>&1
-          yes | sdkmanager --licenses > /dev/null 2>&1
-          echo "Installed packages:"
-          sdkmanager --list_installed 2>/dev/null | grep -E "platforms|build-tools|cmake"
+          SDK="$ANDROID_SDK_ROOT"
+          SDKMGR="$SDK/cmdline-tools/latest/bin/sdkmanager"
+          echo "SDK at: $SDK"
+          echo "sdkmanager at: $SDKMGR"
+          ls -la "$SDKMGR"
+          yes | "$SDKMGR" "platforms;android-36" "build-tools;36.0.0" "cmake;3.22.1"
+          yes | "$SDKMGR" --licenses
+          echo "Installed:"
+          "$SDKMGR" --list_installed | grep -E "platforms|build-tools|cmake" || true
 
       - name: Configure Gradle wrapper
         run: |
