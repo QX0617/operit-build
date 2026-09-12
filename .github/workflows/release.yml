@@ -77,7 +77,7 @@ jobs:
       - name: Build release APK
         run: |
           chmod +x gradlew
-          ./gradlew assembleRelease --no-daemon --stacktrace --console=plain
+          ./gradlew assembleRelease --no-daemon --no-parallel --max-workers=2 --stacktrace --console=plain --info 2>&1 | tee build.log
         env:
           GRADLE_OPTS: "-Xmx6g"
           ANDROID_HOME: ${{ env.ANDROID_SDK_ROOT }}
