@@ -36,7 +36,7 @@ jobs:
           SDK="$ANDROID_SDK_ROOT"
           SDKMGR="$SDK/cmdline-tools/latest/bin/sdkmanager"
           echo "SDK at: $SDK"
-          yes | "$SDKMGR" "platforms;android-36" "build-tools;36.0.0" "ndk;25.1.8937393" "cmake;3.22.1"
+          yes | "$SDKMGR" "platforms;android-36" "build-tools;35.0.0" "build-tools;36.0.0" "ndk;25.1.8937393" "cmake;3.22.1"
           yes | "$SDKMGR" --licenses
 
       - name: Download pre-built native dependencies
@@ -59,8 +59,8 @@ jobs:
 
       - name: Generate release keystore
         run: |
-          if [ ! -f release.keystore ]; then
-            keytool -genkeypair -v -keystore release.keystore -alias operit -keyalg RSA -keysize 2048 -validity 10000 -storepass operit123 -keypass operit123 -dname "CN=Operit, OU=Dev, O=Operit, L=NA, ST=NA, C=CN"
+          if [ ! -f app/release.keystore ]; then
+            keytool -genkeypair -v -keystore app/release.keystore -alias operit -keyalg RSA -keysize 2048 -validity 10000 -storepass operit123 -keypass operit123 -dname "CN=Operit, OU=Dev, O=Operit, L=NA, ST=NA, C=CN"
           fi
 
       - name: Install npm dependencies
