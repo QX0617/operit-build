@@ -720,7 +720,7 @@ class AIToolHandler private constructor(private val context: Context) {
         return tools.chunked(batchSize).flatMap { batch ->
             kotlinx.coroutines.coroutineScope {
                 batch.map { tool ->
-                    kotlinx.coroutines.async { executeToolWithMultiPermission(tool) }
+                    async { executeToolWithMultiPermission(tool) }
                 }.awaitAll()
             }
         }
