@@ -51,7 +51,7 @@ jobs:
           sed -i 's|org.gradle.jvmargs=.*|org.gradle.jvmargs=-Xmx6g -Dfile.encoding=UTF-8|' gradle.properties
           cat > local.properties << EOF
           sdk.dir=$ANDROID_SDK_ROOT
-          RELEASE_STORE_FILE=release.keystore
+          RELEASE_STORE_FILE=$GITHUB_WORKSPACE/release.keystore
           RELEASE_STORE_PASSWORD=operit123
           RELEASE_KEY_ALIAS=operit
           RELEASE_KEY_PASSWORD=operit123
@@ -59,8 +59,8 @@ jobs:
 
       - name: Generate release keystore
         run: |
-          if [ ! -f app/release.keystore ]; then
-            keytool -genkeypair -v -keystore app/release.keystore -alias operit -keyalg RSA -keysize 2048 -validity 10000 -storepass operit123 -keypass operit123 -dname "CN=Operit, OU=Dev, O=Operit, L=NA, ST=NA, C=CN"
+          if [ ! -f $GITHUB_WORKSPACE/release.keystore ]; then
+            keytool -genkeypair -v -keystore $GITHUB_WORKSPACE/release.keystore -alias operit -keyalg RSA -keysize 2048 -validity 10000 -storepass operit123 -keypass operit123 -dname "CN=Operit, OU=Dev, O=Operit, L=NA, ST=NA, C=CN"
           fi
 
       - name: Install npm dependencies
