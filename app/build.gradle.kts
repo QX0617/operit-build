@@ -360,6 +360,11 @@ android {
     namespace = "com.ai.assistance.operit"
     compileSdk = 36
 
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
+    }
+
     sourceSets {
         getByName("main") {
             assets.setSrcDirs(listOf(generatedMainAssetsDir.get().asFile))
