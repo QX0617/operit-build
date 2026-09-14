@@ -64,6 +64,7 @@ import com.ai.assistance.operit.ui.features.settings.screens.SpeechServicesSetti
 import com.ai.assistance.operit.ui.features.settings.screens.ThemeSettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ToolPermissionSettingsScreen
 import com.ai.assistance.operit.ui.features.permission.screens.MultiPermissionConfigScreen
+import com.ai.assistance.operit.ui.features.elderly.ElderlyModeScreen
 import com.ai.assistance.operit.ui.features.settings.screens.MnnModelDownloadScreen
 import com.ai.assistance.operit.ui.features.settings.screens.TokenUsageStatisticsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.UserPreferencesSettingsScreen
@@ -797,7 +798,8 @@ sealed class Screen(
         ) {
             ToolPermissionSettingsScreen(
                 navigateBack = onGoBack,
-                onNavigateToMultiPermission = { navigateTo(MultiPermissionConfig) }
+                onNavigateToMultiPermission = { navigateTo(MultiPermissionConfig) },
+                onNavigateToElderly = { navigateTo(ElderlyMode) }
             )
         }
     }
@@ -815,6 +817,22 @@ sealed class Screen(
                 onGestureConsumed: (Boolean) -> Unit
         ) {
             MultiPermissionConfigScreen(onBack = onGoBack)
+        }
+    }
+
+    data object ElderlyMode :
+            Screen(navItem = NavItem.Settings) {
+        @Composable
+        override fun Content(
+                navController: NavController,
+                navigateTo: ScreenNavigationHandler,
+                onGoBack: () -> Unit,
+                hasBackgroundImage: Boolean,
+                onLoading: (Boolean) -> Unit,
+                onError: (String) -> Unit,
+                onGestureConsumed: (Boolean) -> Unit
+        ) {
+            ElderlyModeScreen(onExit = onGoBack)
         }
     }
 
