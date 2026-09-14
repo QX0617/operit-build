@@ -63,6 +63,7 @@ import com.ai.assistance.operit.ui.features.settings.screens.SettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.SpeechServicesSettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ThemeSettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ToolPermissionSettingsScreen
+import com.ai.assistance.operit.ui.features.permission.screens.MultiPermissionConfigScreen
 import com.ai.assistance.operit.ui.features.settings.screens.MnnModelDownloadScreen
 import com.ai.assistance.operit.ui.features.settings.screens.TokenUsageStatisticsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.UserPreferencesSettingsScreen
@@ -794,7 +795,26 @@ sealed class Screen(
                 onError: (String) -> Unit,
                 onGestureConsumed: (Boolean) -> Unit
         ) {
-            ToolPermissionSettingsScreen(navigateBack = onGoBack)
+            ToolPermissionSettingsScreen(
+                navigateBack = onGoBack,
+                onNavigateToMultiPermission = { navigateTo(MultiPermissionConfig) }
+            )
+        }
+    }
+
+    data object MultiPermissionConfig :
+            Screen(navItem = NavItem.Settings) {
+        @Composable
+        override fun Content(
+                navController: NavController,
+                navigateTo: ScreenNavigationHandler,
+                onGoBack: () -> Unit,
+                hasBackgroundImage: Boolean,
+                onLoading: (Boolean) -> Unit,
+                onError: (String) -> Unit,
+                onGestureConsumed: (Boolean) -> Unit
+        ) {
+            MultiPermissionConfigScreen(onBack = onGoBack)
         }
     }
 

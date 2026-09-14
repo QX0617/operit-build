@@ -357,6 +357,10 @@ object ScreenRouteRegistry {
                 launchNavItem = NavItem.ToolPermissions
             ),
             hostEntryDefinition(
+                entryId = "hidden.multi_permission_config",
+                screen = Screen.MultiPermissionConfig
+            ),
+            hostEntryDefinition(
                 entryId = "hidden.user_preferences_settings",
                 screen = Screen.UserPreferencesSettings
             ),
