@@ -2746,10 +2746,11 @@ fun registerAllTools(handler: AIToolHandler, context: Context) {
         executor = { tool ->
             val text = tool.parameters.find { it.name == "text" }?.value ?: ""
             try {
-                val tts = android.speech.tts.TextToSpeech(context) { status ->
+                var ttsInstance: android.speech.tts.TextToSpeech? = null
+                ttsInstance = android.speech.tts.TextToSpeech(context) { status ->
                     if (status == android.speech.tts.TextToSpeech.SUCCESS) {
-                        tts.language = java.util.Locale.CHINESE
-                        tts.speak(text, android.speech.tts.TextToSpeech.QUEUE_FLUSH, null, "elderly_speak")
+                        ttsInstance?.language = java.util.Locale.CHINESE
+                        ttsInstance?.speak(text, android.speech.tts.TextToSpeech.QUEUE_FLUSH, null, "elderly_speak")
                     }
                 }
                 ToolResult(

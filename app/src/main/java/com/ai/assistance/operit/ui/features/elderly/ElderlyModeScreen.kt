@@ -191,7 +191,7 @@ fun ElderlyModeScreen(
 
 @Composable
 private fun ElderlyMessageBubble(msg: ElderlyChatMessage) {
-    val alignment = if (msg.isFromUser) Alignment.End else Alignment.Start
+    val alignment = if (msg.isFromUser) Alignment.CenterEnd else Alignment.CenterStart
     val bubbleColor = if (msg.isFromUser)
         MaterialTheme.colorScheme.primary
     else
