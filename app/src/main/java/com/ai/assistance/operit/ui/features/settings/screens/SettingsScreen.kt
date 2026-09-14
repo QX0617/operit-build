@@ -54,7 +54,8 @@ fun SettingsScreen(
         navigateToWaifuModeSettings: () -> Unit,
         navigateToTokenUsageStatistics: () -> Unit,
         navigateToContextSummarySettings: () -> Unit,
-        navigateToLayoutAdjustmentSettings: () -> Unit
+        navigateToLayoutAdjustmentSettings: () -> Unit,
+        navigateToElderlyMode: () -> Unit = {}
 ) {
         val context = LocalContext.current
         val githubAuth = remember { GitHubAuthPreferences.getInstance(context) }
@@ -255,6 +256,13 @@ fun SettingsScreen(
                                 subtitle = stringResource(id = R.string.settings_tool_permissions_subtitle),
                                 icon = Icons.Default.AdminPanelSettings,
                                 onClick = navigateToToolPermissions
+                        )
+
+                        CompactSettingsItem(
+                                title = "老年人/无障碍模式",
+                                subtitle = "大字大按钮，语音输入为主，TTS语音播报",
+                                icon = Icons.Default.Accessibility,
+                                onClick = navigateToElderlyMode
                         )
 
                         CompactSettingsItem(

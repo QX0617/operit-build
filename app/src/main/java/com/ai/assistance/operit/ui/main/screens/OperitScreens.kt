@@ -603,7 +603,8 @@ sealed class Screen(
                     navigateToWaifuModeSettings = { navigateTo(WaifuModeSettings) },
                     navigateToTokenUsageStatistics = { navigateTo(TokenUsageStatistics) },
                     navigateToContextSummarySettings = { navigateTo(ContextSummarySettings) },
-                    navigateToLayoutAdjustmentSettings = { navigateTo(LayoutAdjustmentSettings) }
+                    navigateToLayoutAdjustmentSettings = { navigateTo(LayoutAdjustmentSettings) },
+                    navigateToElderlyMode = { navigateTo(ElderlyMode) }
             )
         }
     }
