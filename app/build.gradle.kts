@@ -560,7 +560,8 @@ val signRotatedNightlyApk by tasks.registering {
 }
 
 tasks.matching { it.name == "assembleRelease" }.configureEach {
-    finalizedBy(signRotatedReleaseApk)
+    // Disabled: rotation signing requires APK_ROTATION_NEW_STORE_FILE which is not set in CI
+    // finalizedBy(signRotatedReleaseApk)
 }
 
 tasks.matching { it.name == "assembleNightly" }.configureEach {
