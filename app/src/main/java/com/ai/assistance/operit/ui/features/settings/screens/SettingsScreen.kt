@@ -40,6 +40,7 @@ fun SettingsScreen(
         navigateToUserPreferences: () -> Unit,
         navigateToGitHubAccount: () -> Unit,
         navigateToToolPermissions: () -> Unit,
+        navigateToAccessibilitySettings: () -> Unit,
         navigateToModelConfig: () -> Unit,
         navigateToThemeSettings: () -> Unit,
         navigateToGlobalDisplaySettings: () -> Unit,
@@ -54,8 +55,7 @@ fun SettingsScreen(
         navigateToWaifuModeSettings: () -> Unit,
         navigateToTokenUsageStatistics: () -> Unit,
         navigateToContextSummarySettings: () -> Unit,
-        navigateToLayoutAdjustmentSettings: () -> Unit,
-        navigateToElderlyMode: () -> Unit = {}
+        navigateToLayoutAdjustmentSettings: () -> Unit
 ) {
         val context = LocalContext.current
         val githubAuth = remember { GitHubAuthPreferences.getInstance(context) }
@@ -259,10 +259,10 @@ fun SettingsScreen(
                         )
 
                         CompactSettingsItem(
-                                title = "老年人/无障碍模式",
-                                subtitle = "大字大按钮，语音输入为主，TTS语音播报",
+                                title = "无障碍 / 老年人模式",
+                                subtitle = "字号大小、高对比配色",
                                 icon = Icons.Default.Accessibility,
-                                onClick = navigateToElderlyMode
+                                onClick = navigateToAccessibilitySettings
                         )
 
                         CompactSettingsItem(

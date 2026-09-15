@@ -39,16 +39,6 @@ import kotlinx.coroutines.launch
 fun MultiPermissionConfigScreen(
     onBack: () -> Unit = {}
 ) {
-    val context = LocalContext.current
-    val scope = rememberCoroutineScope()
-    val manager = remember { MultiPermissionManager.getInstance(context) }
-    var config by remember { mutableStateOf(MultiPermissionConfig()) }
-    var showToolOverrideDialog by remember { mutableStateOf(false) }
-
-    LaunchedEffect(Unit) {
-        config = manager.loadConfig()
-    }
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -64,13 +54,31 @@ fun MultiPermissionConfigScreen(
             )
         }
     ) { paddingValues ->
-        LazyColumn(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(paddingValues),
-            contentPadding = PaddingValues(16.dp),
-            verticalArrangement = Arrangement.spacedBy(12.dp)
-        ) {
+        MultiPermissionConfigContent(modifier = Modifier.padding(paddingValues))
+    }
+}
+
+/**
+ * 多权限优先级配置正文（不含 Scaffold/顶栏），
+ * 既可独立成屏，也可嵌入权限授予引导（PermissionGuideScreen）的一页中。
+ */
+@Composable
+fun MultiPermissionConfigContent(modifier: Modifier = Modifier) {
+    val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    val manager = remember { MultiPermissionManager.getInstance(context) }
+    var config by remember { mutableStateOf(MultiPermissionConfig()) }
+
+    LaunchedEffect(Unit) {
+        config = manager.loadConfig()
+    }
+
+    LazyColumn(
+        modifier = modifier
+            .fillMaxSize(),
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
             // 总开关
             item {
                 Card(
@@ -397,7 +405,6 @@ fun MultiPermissionConfigScreen(
             }
         }
     }
-}
 
 /**
  * 优先级列表项

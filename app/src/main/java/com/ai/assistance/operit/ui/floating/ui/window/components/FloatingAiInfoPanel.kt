@@ -2,7 +2,6 @@ package com.ai.assistance.operit.ui.floating.ui.window.components
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -13,7 +12,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -43,7 +41,7 @@ fun FloatingAiInfoPanel(
     onExpandClick: (() -> Unit)? = null
 ) {
     val isProcessing = inputProcessingState != InputProcessingState.Idle
-    val isThinking = inputProcessingState is InputProcessingState.Processing
+    val isThinking = inputProcessingState == InputProcessingState.Processing
     val isStreaming = currentMessage?.contentStream != null && isProcessing
 
     // 流式内容实时更新
@@ -277,4 +275,4 @@ private fun Modifier.clickableSafe(onClick: () -> Unit): Modifier =
 
 // 需要的导入
 private fun Modifier.clickable(onClick: () -> Unit): Modifier =
-    this.then(Modifier.clickable { onClick() })
+    this.then(androidx.compose.foundation.clickable { onClick() })

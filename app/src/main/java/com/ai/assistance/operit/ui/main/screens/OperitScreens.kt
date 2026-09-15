@@ -46,6 +46,7 @@ import com.ai.assistance.operit.ui.features.packages.screens.toArtifactPublishCl
 import com.ai.assistance.operit.ui.features.packages.market.ArtifactPublishClusterContext
 import com.ai.assistance.operit.ui.features.packages.market.MarketStatsType
 import com.ai.assistance.operit.ui.features.packages.market.PluginCreationIntent
+import com.ai.assistance.operit.ui.features.settings.screens.AccessibilitySettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ChatBackupSettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ChatHistorySettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ContextSummarySettingsScreen
@@ -63,8 +64,6 @@ import com.ai.assistance.operit.ui.features.settings.screens.SettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.SpeechServicesSettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ThemeSettingsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.ToolPermissionSettingsScreen
-import com.ai.assistance.operit.ui.features.permission.screens.MultiPermissionConfigScreen
-import com.ai.assistance.operit.ui.features.elderly.ElderlyModeScreen
 import com.ai.assistance.operit.ui.features.settings.screens.MnnModelDownloadScreen
 import com.ai.assistance.operit.ui.features.settings.screens.TokenUsageStatisticsScreen
 import com.ai.assistance.operit.ui.features.settings.screens.UserPreferencesSettingsScreen
@@ -588,6 +587,7 @@ sealed class Screen(
             SettingsScreen(
                     navigateToUserPreferences = { navigateTo(UserPreferencesSettings) },
                     navigateToToolPermissions = { navigateTo(ToolPermission) },
+                    navigateToAccessibilitySettings = { navigateTo(AccessibilitySettings) },
                     navigateToGitHubAccount = { navigateTo(GitHubAccount) },
                     navigateToModelConfig = { navigateTo(ModelConfig) },
                     navigateToThemeSettings = { navigateTo(ThemeSettings) },
@@ -603,8 +603,7 @@ sealed class Screen(
                     navigateToWaifuModeSettings = { navigateTo(WaifuModeSettings) },
                     navigateToTokenUsageStatistics = { navigateTo(TokenUsageStatistics) },
                     navigateToContextSummarySettings = { navigateTo(ContextSummarySettings) },
-                    navigateToLayoutAdjustmentSettings = { navigateTo(LayoutAdjustmentSettings) },
-                    navigateToElderlyMode = { navigateTo(ElderlyMode) }
+                    navigateToLayoutAdjustmentSettings = { navigateTo(LayoutAdjustmentSettings) }
             )
         }
     }
@@ -797,15 +796,11 @@ sealed class Screen(
                 onError: (String) -> Unit,
                 onGestureConsumed: (Boolean) -> Unit
         ) {
-            ToolPermissionSettingsScreen(
-                navigateBack = onGoBack,
-                onNavigateToMultiPermission = { navigateTo(MultiPermissionConfig) },
-                onNavigateToElderly = { navigateTo(ElderlyMode) }
-            )
+            ToolPermissionSettingsScreen(navigateBack = onGoBack)
         }
     }
 
-    data object MultiPermissionConfig :
+    data object AccessibilitySettings :
             Screen(navItem = NavItem.Settings) {
         @Composable
         override fun Content(
@@ -817,23 +812,7 @@ sealed class Screen(
                 onError: (String) -> Unit,
                 onGestureConsumed: (Boolean) -> Unit
         ) {
-            MultiPermissionConfigScreen(onBack = onGoBack)
-        }
-    }
-
-    data object ElderlyMode :
-            Screen(navItem = NavItem.Settings) {
-        @Composable
-        override fun Content(
-                navController: NavController,
-                navigateTo: ScreenNavigationHandler,
-                onGoBack: () -> Unit,
-                hasBackgroundImage: Boolean,
-                onLoading: (Boolean) -> Unit,
-                onError: (String) -> Unit,
-                onGestureConsumed: (Boolean) -> Unit
-        ) {
-            ElderlyModeScreen(onExit = onGoBack)
+            AccessibilitySettingsScreen(onBack = onGoBack)
         }
     }
 

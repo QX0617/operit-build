@@ -48,6 +48,7 @@ import coil.compose.AsyncImagePainter
 import coil.compose.rememberAsyncImagePainter
 import com.ai.assistance.operit.data.model.ActivePrompt
 import com.ai.assistance.operit.data.preferences.ActivePromptManager
+import com.ai.assistance.operit.data.preferences.AccessibilityPreferences
 import com.ai.assistance.operit.data.preferences.CharacterCardManager
 import com.ai.assistance.operit.data.preferences.UserPreferencesManager
 import com.ai.assistance.operit.data.preferences.UserPreferencesManager.Companion.ON_COLOR_MODE_DARK
@@ -100,6 +101,12 @@ fun OperitTheme(content: @Composable () -> Unit) {
     )
     val themeSnapshot = rememberActiveThemePreferenceSnapshot()
 
+    // 无障碍 / 老年人模式偏好（主界面与悬浮窗共用本主题）
+    val accessibilityPrefs = remember { AccessibilityPreferences.getInstance(context) }
+    val elderlyEnabled by accessibilityPrefs.elderlyModeEnabled.collectAsState()
+    val highContrastEnabled by accessibilityPrefs.highContrastEnabled.collectAsState()
+    val accessFontScalePercent by accessibilityPrefs.fontScalePercent.collectAsState()
+
     fun disableBackgroundForTarget(target: ActivePrompt) {
         coroutineScope.launch {
             activePromptManager.mutateActiveThemeForPrompt(target) { values ->
@@ -132,15 +139,24 @@ fun OperitTheme(content: @Composable () -> Unit) {
     val customFontPath = themeSnapshot.customFontPath
     val fontScale = themeSnapshot.fontScale
 
+    // 无障碍字号叠加：老年人模式默认放大 1.25 倍；手动字号（非 100）时以手动为准
+    val accessFontScale =
+            if (accessFontScalePercent == AccessibilityPreferences.DEFAULT_FONT_SCALE) {
+                if (elderlyEnabled) 1.25f else 1f
+            } else {
+                accessFontScalePercent / 100f
+            }
+    val combinedFontScale = fontScale * accessFontScale
+
     // 创建自定义 Typography
-    val customTypography = remember(useCustomFont, fontType, systemFontName, customFontPath, fontScale) {
+    val customTypography = remember(useCustomFont, fontType, systemFontName, customFontPath, combinedFontScale) {
         createCustomTypography(
             context = context,
             useCustomFont = useCustomFont,
             fontType = fontType,
             systemFontName = systemFontName,
             customFontPath = customFontPath,
-            fontScale = fontScale
+            fontScale = combinedFontScale
         )
     }
 
@@ -179,6 +195,11 @@ fun OperitTheme(content: @Composable () -> Unit) {
                 generateLightColorScheme(primary, secondary, onColorMode)
                     }
         }
+    }
+
+    // 高对比配色（无障碍）：强化文字与背景对比
+    if (highContrastEnabled) {
+        colorScheme = applyHighContrast(colorScheme, darkTheme)
     }
 
     val view = LocalView.current
@@ -655,4 +676,22 @@ private fun isColorLight(color: Color): Boolean {
 /** 判断颜色是否较深 */
 private fun isColorDark(color: Color): Boolean {
     return !isColorLight(color)
+}
+
+/**
+ * 高对比配色（无障碍）：不改变品牌主色，但把正文/次要文字拉到纯黑或纯白，
+ * 表面/背景用最高对比色，保证文字可读性。
+ */
+private fun applyHighContrast(scheme: ColorScheme, darkTheme: Boolean): ColorScheme {
+    val textColor = if (darkTheme) Color.White else Color.Black
+    val weakText = if (darkTheme) Color.White else Color.Black
+    return scheme.copy(
+        onSurface = textColor,
+        onSurfaceVariant = weakText,
+        onBackground = textColor,
+        onPrimary = if (darkTheme) Color.Black else Color.White,
+        onSecondary = if (darkTheme) Color.Black else Color.White,
+        outline = textColor,
+        outlineVariant = textColor
+    )
 }

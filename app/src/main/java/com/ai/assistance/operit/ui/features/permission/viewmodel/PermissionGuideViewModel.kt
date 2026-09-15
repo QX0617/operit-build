@@ -32,7 +32,8 @@ class PermissionGuideViewModel : ViewModel() {
     enum class Step {
         WELCOME,
         BASIC_PERMISSIONS,
-        PERMISSION_LEVEL
+        PERMISSION_LEVEL,
+        MULTI_PERMISSION
     }
     
     // 初始化
@@ -111,23 +112,18 @@ class PermissionGuideViewModel : ViewModel() {
         AppLogger.d(TAG, "Selected permission level: $level")
     }
     
-    // 保存权限级别
+    // 保存权限级别（仅持久化，不标记完成——完成由 completeGuide 在最后一页触发）
     fun savePermissionLevel() {
         val level = _uiState.value.selectedPermissionLevel
         if (level != null) {
             AppLogger.d(TAG, "Saving permission level: $level")
-            
+
             viewModelScope.launch {
                 // 保存到偏好设置
                 try {
                     androidPermissionPreferences.savePreferredPermissionLevel(level)
                     AndroidShellExecutor.clearPreferredPermissionLevelCache()
                     AppLogger.d(TAG, "Preferred permission level switched to: $level")
-
-                    // 更新完成状态
-                    _uiState.update { it.copy(isCompleted = true) }
-                    
-                    AppLogger.d(TAG, "Permission level saved, guide completed")
                 } catch (e: Exception) {
                     AppLogger.e(TAG, "Error saving permission level", e)
                 }
@@ -135,6 +131,12 @@ class PermissionGuideViewModel : ViewModel() {
         } else {
             AppLogger.w(TAG, "Cannot save null permission level")
         }
+    }
+
+    // 引导流程最后一步：标记完成（此时权限级别与多权限优先级均已配置）
+    fun completeGuide() {
+        _uiState.update { it.copy(isCompleted = true) }
+        AppLogger.d(TAG, "Permission guide completed")
     }
     
     // 更新位置权限状态

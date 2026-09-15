@@ -90,3 +90,12 @@ tmp
 temp
 .tmp
 .temp
+
+# local build logs / helper scripts (do not upload)
+build_final.log
+build_verify*.log
+build_win*.log
+build_run.log
+build_pid.txt
+run_build.bat
+

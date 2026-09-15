@@ -39,38 +39,6 @@ This repository is Operit's Android edition. Operit 2 is a separate second-gener
 - **Long-term memory and characters**: Manage graph-based memory, chat history, character cards, and multi-character conversations, with an independent set of capabilities assigned to each character
 - **Composable extensions and automation**: Combine tools through the unified marketplace, workflows, and system integrations to create repeatable task flows
 
-## ✨ New in This Release
-
-<details>
-<summary><b>🔄 Multi-Permission Priority & Layered Startup</b></summary>
-
-- **Parallel tool dispatch**: The AI can invoke multiple tools simultaneously, processing them in batches for faster complex-task execution
-- **Priority ordering**: Each permission profile has a configurable priority level; higher-priority tools execute first on the critical path
-- **Automatic fallback**: When a tool fails due to insufficient permissions or runtime errors, execution automatically retries with the next permission profile
-- **Visual configuration UI**: A dedicated multi-permission settings screen lets you add, remove, reorder, and edit permission profiles with a live execution-order preview
-
-</details>
-
-<details>
-<summary><b>🧠 Real-Time Thinking Display</b></summary>
-
-- **Streaming thinking visualization**: The chat UI shows the model's reasoning blocks (thinking content) as they stream in, making the AI's thought process transparent
-- **Smart content extraction**: ThinkingContentExtractor identifies and separates thinking content from the final reply in real time
-- **Collapsible panels**: Thinking output appears as expandable cards—expand to read the full reasoning, or collapse to keep the chat clean
-- **Typewriter animation**: Thinking text renders character by character with a pulsing scale indicator for a live, immersive feel
-
-</details>
-
-<details>
-<summary><b>🪟 Floating Window Streaming Info Panel</b></summary>
-
-- **Live AI status panel**: The floating window displays the current conversation's AI info, including model name and processing state (connecting / receiving / idle)
-- **Streaming message preview**: Watch the AI's reply stream directly in the floating window without opening the main app
-- **Latest message highlight**: Automatically scrolls to the newest message with a typing indicator, making it obvious the AI is replying
-- **Scrollable message list**: Browse multiple recent messages in the floating window, ordered by recency, to keep context at hand
-
-</details>
-
 ## Feature Showcase
 
 <a href="docs/assets/readme/operit-agent-task-flow-2400x1000-v3.png">

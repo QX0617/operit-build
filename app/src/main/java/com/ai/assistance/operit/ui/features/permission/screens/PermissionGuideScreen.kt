@@ -84,7 +84,8 @@ private const val INTRO_PAGES_COUNT = 3
 private const val WELCOME_PAGE_INDEX = INTRO_PAGES_COUNT
 private const val BASIC_PERMISSIONS_PAGE_INDEX = INTRO_PAGES_COUNT + 1
 private const val PERMISSION_LEVEL_PAGE_INDEX = INTRO_PAGES_COUNT + 2
-private const val TOTAL_PAGES_COUNT = INTRO_PAGES_COUNT + 3
+private const val MULTI_PERMISSION_PAGE_INDEX = INTRO_PAGES_COUNT + 3
+private const val TOTAL_PAGES_COUNT = INTRO_PAGES_COUNT + 4
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -143,6 +144,8 @@ fun PermissionGuideScreen(
                 viewModel.setCurrentStep(PermissionGuideViewModel.Step.BASIC_PERMISSIONS)
             PERMISSION_LEVEL_PAGE_INDEX ->
                 viewModel.setCurrentStep(PermissionGuideViewModel.Step.PERMISSION_LEVEL)
+            MULTI_PERMISSION_PAGE_INDEX ->
+                viewModel.setCurrentStep(PermissionGuideViewModel.Step.MULTI_PERMISSION)
         }
     }
 
@@ -379,8 +382,14 @@ fun PermissionGuideScreen(
                                 onLevelSelected = { level ->
                                     viewModel.selectPermissionLevel(level)
                                 },
-                                onConfirm = { viewModel.savePermissionLevel() }
+                                onConfirm = {
+                                    viewModel.savePermissionLevel()
+                                    scope.launch {
+                                        pagerState.animateScrollToPage(MULTI_PERMISSION_PAGE_INDEX)
+                                    }
+                                }
                         )
+                MULTI_PERMISSION_PAGE_INDEX -> MultiPermissionPage()
             }
         }
 
@@ -428,6 +437,7 @@ fun PermissionGuideScreen(
                                         stringResource(R.string.permission_guide_basic_permissions)
                                 PERMISSION_LEVEL_PAGE_INDEX ->
                                         stringResource(R.string.permission_guide_permission_level)
+                                MULTI_PERMISSION_PAGE_INDEX -> "多权限优先级"
                                 else -> ""
                             },
                     style = MaterialTheme.typography.bodyMedium,
@@ -442,10 +452,15 @@ fun PermissionGuideScreen(
                         onClick = {
                             scope.launch {
                                 when {
-                                    // 最后一页且已选择权限级别，完成设置
+                                    // 最后一页（多权限优先级配置）：完成整个引导
+                                    pagerState.currentPage == MULTI_PERMISSION_PAGE_INDEX -> {
+                                        viewModel.completeGuide()
+                                    }
+                                    // 权限级别页：已选级别则保存并进入多权限配置页
                                     pagerState.currentPage == PERMISSION_LEVEL_PAGE_INDEX &&
                                             uiState.selectedPermissionLevel != null -> {
                                         viewModel.savePermissionLevel()
+                                        pagerState.animateScrollToPage(MULTI_PERMISSION_PAGE_INDEX)
                                     }
                                     // 在基础权限页但未获得所有权限时，显示警告对话框
                                     pagerState.currentPage == BASIC_PERMISSIONS_PAGE_INDEX &&
@@ -466,12 +481,13 @@ fun PermissionGuideScreen(
                                             true // 基础权限页现在始终可以前进，但会有警告弹窗
                                     PERMISSION_LEVEL_PAGE_INDEX ->
                                             uiState.selectedPermissionLevel != null // 权限级别页需要已选择级别
+                                    MULTI_PERMISSION_PAGE_INDEX -> true
                                     else -> false
                                 }
                 ) {
                     Icon(
                             imageVector =
-                                    if (pagerState.currentPage == PERMISSION_LEVEL_PAGE_INDEX)
+                                    if (pagerState.currentPage == MULTI_PERMISSION_PAGE_INDEX)
                                             Icons.Default.Check
                                     else Icons.Default.ArrowForward,
                             contentDescription =
@@ -997,5 +1013,34 @@ private fun PermissionLevelItem(
                 )
             }
         }
+    }
+}
+
+/**
+ * 权限授予引导中的“多权限优先级配置”页。
+ * 把原先放在工具权限界面里的多权限多层启动配置前移到权限授予流程中。
+ */
+@Composable
+private fun MultiPermissionPage() {
+    Column(modifier = Modifier.fillMaxSize()) {
+        Column(
+            modifier = Modifier.padding(bottom = 8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = "多权限优先级",
+                style = MaterialTheme.typography.titleLarge,
+                fontWeight = FontWeight.Bold,
+                color = MaterialTheme.colorScheme.primary
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(
+                text = "配置 AI 执行工具时的权限层级与优先级（可稍后在设置中调整）",
+                style = MaterialTheme.typography.bodySmall,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f)
+            )
+        }
+        MultiPermissionConfigContent(modifier = Modifier.weight(1f))
     }
 }
