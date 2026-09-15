@@ -39,7 +39,7 @@ class ChatRuntimeHolder private constructor(context: Context) {
                 coroutineScope = runtimeScope,
                 selectionMode = when (slot) {
                     ChatRuntimeSlot.MAIN -> ChatSelectionMode.FOLLOW_GLOBAL
-                    ChatRuntimeSlot.FLOATING -> ChatSelectionMode.LOCAL_ONLY
+                    ChatRuntimeSlot.FLOATING -> ChatSelectionMode.FOLLOW_GLOBAL
                 }
             )
         }

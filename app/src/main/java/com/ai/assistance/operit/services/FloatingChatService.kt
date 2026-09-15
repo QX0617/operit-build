@@ -235,6 +235,24 @@ class FloatingChatService : Service(), FloatingWindowCallback {
                     AppLogger.d(TAG, "聊天历史已更新: ${messages.size} 条消息")
                 }
             }
+
+            // 实时镜像：主/浮选中同一会话时，用主窗实时消息覆盖悬浮窗展示
+            serviceScope.launch {
+                val mainCore =
+                    ChatRuntimeHolder.getInstance(applicationContext).getCore(ChatRuntimeSlot.MAIN)
+                combine(
+                    mainCore.chatHistory,
+                    mainCore.currentChatId,
+                    chatCore.currentChatId
+                ) { mainMsgs, mainChatId, floatingChatId ->
+                    if (!mainChatId.isNullOrBlank() && mainChatId == floatingChatId) mainMsgs else null
+                }.collect { mirror ->
+                    if (mirror != null) {
+                        chatMessages.value = mirror
+                        AppLogger.d(TAG, "实时镜像主窗口消息: ${mirror.size} 条")
+                    }
+                }
+            }
             
             // 订阅附件列表更新
             serviceScope.launch {

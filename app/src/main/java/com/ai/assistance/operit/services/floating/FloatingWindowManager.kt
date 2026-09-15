@@ -1194,8 +1194,14 @@ class FloatingWindowManager(
                     pendingImeFocusRunnable = null
                     AppLogger.w(
                         TAG,
-                        "Skip IME request: no focused host after $MAX_IME_FOCUS_RETRIES retries."
+                        "No focused IME host after $MAX_IME_FOCUS_RETRIES retries; falling back to root view windowToken."
                     )
+                    // Compose findFocus() 拿不到可编辑 IME 目标时，用根 View windowToken 直接唤起键盘
+                    try {
+                        imm.showSoftInput(rootView, InputMethodManager.SHOW_IMPLICIT)
+                    } catch (e: Exception) {
+                        AppLogger.e(TAG, "Fallback IME show on root view failed", e)
+                    }
                     return@Runnable
                 }
 
