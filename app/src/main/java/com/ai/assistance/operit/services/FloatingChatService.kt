@@ -235,6 +235,29 @@ class FloatingChatService : Service(), FloatingWindowCallback {
                     AppLogger.d(TAG, "聊天历史已更新: ${messages.size} 条消息")
                 }
             }
+
+            // 实时跟随主窗口：当主/浮两端选中同一会话时，用主窗的实时消息镜像悬浮窗展示，
+            // 消除"主窗流式生成过程中，悬浮窗仍是上一轮结束前旧内容"的同步滞后
+            val mainCore =
+                ChatRuntimeHolder.getInstance(applicationContext).getCore(ChatRuntimeSlot.MAIN)
+            serviceScope.launch {
+                combine(
+                    mainCore.chatHistory,
+                    mainCore.currentChatId,
+                    chatCore.currentChatId
+                ) { mainMsgs, mainChatId, floatingChatId ->
+                    if (!mainChatId.isNullOrBlank() && mainChatId == floatingChatId) {
+                        mainMsgs
+                    } else {
+                        null
+                    }
+                }.collect { mirror ->
+                    if (mirror != null) {
+                        chatMessages.value = mirror
+                        AppLogger.d(TAG, "实时镜像主窗口消息: ${mirror.size} 条")
+                    }
+                }
+            }
             
             // 订阅附件列表更新
             serviceScope.launch {
@@ -269,21 +292,6 @@ class FloatingChatService : Service(), FloatingWindowCallback {
                     } catch (e: Exception) {
                         AppLogger.e(TAG, "监听输入处理状态失败", e)
                     }
-                }
-            }
-
-            // 启动时把悬浮窗会话对齐到主页当前会话，避免浮窗停在独立的空白/旧会话上造成“不同步”。
-            // （wake 唤醒并要求新建会话的场景由 onStartCommand 中的 wakeLaunched 逻辑另行处理。）
-            serviceScope.launch {
-                try {
-                    val holder = ChatRuntimeHolder.getInstance(applicationContext)
-                    val mainChatId = holder.getCore(ChatRuntimeSlot.MAIN).currentChatId.value
-                    if (!mainChatId.isNullOrBlank()) {
-                        holder.syncMainChatSelectionToFloating(mainChatId)
-                        AppLogger.d(TAG, "悬浮窗启动时已对齐主页当前会话: $mainChatId")
-                    }
-                } catch (e: Exception) {
-                    AppLogger.e(TAG, "悬浮窗启动时对齐主页会话失败", e)
                 }
             }
 
