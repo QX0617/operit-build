@@ -16,6 +16,8 @@ import com.ai.assistance.operit.ui.common.displays.MessageContentParser
 import com.ai.assistance.operit.ui.permissions.ToolPermissionSystem
 import com.ai.assistance.operit.util.stream.splitBy
 import com.ai.assistance.operit.util.stream.stream
+import kotlinx.coroutines.async
+import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.delay
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CopyOnWriteArrayList
@@ -718,7 +720,7 @@ class AIToolHandler private constructor(private val context: Context) {
         return tools.chunked(batchSize).flatMap { batch ->
             kotlinx.coroutines.coroutineScope {
                 batch.map { tool ->
-                    kotlinx.coroutines.async { executeToolWithMultiPermission(tool) }
+                    async { executeToolWithMultiPermission(tool) }
                 }.awaitAll()
             }
         }
