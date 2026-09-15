@@ -117,6 +117,8 @@ class FloatingWindowManager(
     private var windowPersistentHidden: Boolean = false
     private var indicatorDisplayEnabled: Boolean = true
     private var indicatorPersistentEnabled: Boolean = false
+    private var focusReleaseRunnable: Runnable? = null
+    private var windowIsFocusable: Boolean = false
 
     private fun cancelFocusBeforeExit() {
         val view = composeView ?: return
@@ -135,6 +137,9 @@ class FloatingWindowManager(
         }
         pendingImeFocusRunnable?.let { mainHandler.removeCallbacks(it) }
         pendingImeFocusRunnable = null
+        focusReleaseRunnable?.let { mainHandler.removeCallbacks(it) }
+        focusReleaseRunnable = null
+        windowIsFocusable = false
         focusDismissOverlayRequested = false
         setFocusDismissOverlayEnabled(false)
     }
@@ -150,6 +155,10 @@ class FloatingWindowManager(
         private const val IME_FOCUS_DELAY_MS = 200L
         private const val IME_FOCUS_RETRY_DELAY_MS = 50L
         private const val MAX_IME_FOCUS_RETRIES = 4
+        // 焦点释放去抖：updateViewLayout 改变 FLAG_NOT_FOCUSABLE 会引起短暂的窗口/Compose 焦点抖动，
+        // 若立即响应 onFocusChanged(false)，会在软键盘弹出前把窗口重新置为 NOT_FOCUSABLE，
+        // 表现为“点输入框键盘一闪即关”。延迟真正的释放动作，期间若重新请求焦点则取消。
+        private const val FOCUS_RELEASE_DEBOUNCE_MS = 220L
     }
 
     private fun resolveSoftInputModeForMode(mode: FloatingMode): Int {
@@ -1047,23 +1056,29 @@ class FloatingWindowManager(
         if (needsFocus) {
             pendingImeFocusRunnable?.let { mainHandler.removeCallbacks(it) }
             pendingImeFocusRunnable = null
+            // 取消尚未执行的焦点释放去抖，避免“请求聚焦”被自己之前的抖动释放取消
+            focusReleaseRunnable?.let { mainHandler.removeCallbacks(it) }
+            focusReleaseRunnable = null
             focusDismissOverlayRequested = true
             setFocusDismissOverlayEnabled(true)
 
-            // Step 1: 更新窗口参数使其可获取焦点
-            updateViewLayout { params ->
-                params.flags = params.flags and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE.inv()
+            // Step 1: 更新窗口参数使其可获取焦点（已可聚焦则跳过，避免 updateViewLayout 引发焦点抖动）
+            if (!windowIsFocusable) {
+                windowIsFocusable = true
+                updateViewLayout { params ->
+                    params.flags = params.flags and WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE.inv()
 
-                // Keep background tappable while IME is active.
-                if (state.currentMode.value == FloatingMode.WINDOW) {
-                    params.flags =
-                            params.flags or
-                                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
-                                    WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
+                    // Keep background tappable while IME is active.
+                    if (state.currentMode.value == FloatingMode.WINDOW) {
+                        params.flags =
+                                params.flags or
+                                        WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL or
+                                        WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
+                    }
+
+                    @Suppress("DEPRECATION")
+                    params.softInputMode = resolveSoftInputModeForMode(state.currentMode.value)
                 }
-
-                @Suppress("DEPRECATION")
-                params.softInputMode = resolveSoftInputModeForMode(state.currentMode.value)
             }
 
             // Step 2: 等待Compose真正建立输入焦点后再显示键盘
@@ -1072,41 +1087,60 @@ class FloatingWindowManager(
         } else {
             pendingImeFocusRunnable?.let { mainHandler.removeCallbacks(it) }
             pendingImeFocusRunnable = null
-            focusDismissOverlayRequested = false
-            setFocusDismissOverlayEnabled(false)
 
-            // Step 1: 立即清理悬浮窗焦点并隐藏键盘，避免阻塞外部输入框抢焦点
-            try {
-                view.findFocus()?.clearFocus()
-            } catch (_: Exception) {
-            }
-            try {
-                view.clearFocus()
-            } catch (_: Exception) {
-            }
-            imm.hideSoftInputFromWindow(view.windowToken, 0)
-
-            // Step 2: 立即恢复窗口不可聚焦状态（全屏模式除外）
-            updateViewLayout { params ->
-                if (state.currentMode.value != FloatingMode.FULLSCREEN && state.currentMode.value != FloatingMode.SCREEN_OCR) {
-                    params.flags =
-                            params.flags or
-                                    WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
-                    params.flags =
-                            params.flags and
-                                    WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL.inv()
-                    params.flags =
-                            params.flags and
-                                    WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH.inv()
+            // 去抖：窗口从 NOT_FOCUSABLE 切到可聚焦时会有一次短暂焦点抖动，
+            // Compose 随即回调 onFocusChanged(false)。若立即执行释放，会在软键盘弹出前把窗口
+            // 重新置为 NOT_FOCUSABLE，表现为“点输入框键盘一闪即关”。延迟真正的释放动作，
+            // 期间若用户仍在输入（重新请求焦点）则取消。
+            if (windowIsFocusable) {
+                focusReleaseRunnable?.let { mainHandler.removeCallbacks(it) }
+                val release = Runnable {
+                    focusReleaseRunnable = null
+                    windowIsFocusable = false
+                    performFocusRelease(view, imm)
                 }
-                params.softInputMode = resolveSoftInputModeForMode(state.currentMode.value)
+                focusReleaseRunnable = release
+                mainHandler.postDelayed(release, FOCUS_RELEASE_DEBOUNCE_MS)
             }
-            val lp = view.layoutParams as? WindowManager.LayoutParams
-            AppLogger.d(
-                TAG,
-                "setFocusable(false) applied: hasFocus=${view.hasFocus()}, findFocus=${view.findFocus() != null}, flags=${lp?.flags}"
-            )
         }
+    }
+
+    /** 真正执行“释放悬浮窗输入焦点”的动作（由 setFocusable(false) 去抖后调用） */
+    private fun performFocusRelease(view: View, imm: InputMethodManager) {
+        focusDismissOverlayRequested = false
+        setFocusDismissOverlayEnabled(false)
+
+        // Step 1: 清理悬浮窗焦点并隐藏键盘，避免阻塞外部输入框抢焦点
+        try {
+            view.findFocus()?.clearFocus()
+        } catch (_: Exception) {
+        }
+        try {
+            view.clearFocus()
+        } catch (_: Exception) {
+        }
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+
+        // Step 2: 恢复窗口不可聚焦状态（全屏模式除外）
+        updateViewLayout { params ->
+            if (state.currentMode.value != FloatingMode.FULLSCREEN && state.currentMode.value != FloatingMode.SCREEN_OCR) {
+                params.flags =
+                        params.flags or
+                                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
+                params.flags =
+                        params.flags and
+                                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL.inv()
+                params.flags =
+                        params.flags and
+                                WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH.inv()
+            }
+            params.softInputMode = resolveSoftInputModeForMode(state.currentMode.value)
+        }
+        val lp = view.layoutParams as? WindowManager.LayoutParams
+        AppLogger.d(
+            TAG,
+            "setFocusable(false) applied: hasFocus=${view.hasFocus()}, findFocus=${view.findFocus() != null}, flags=${lp?.flags}"
+        )
     }
 
     private fun scheduleImeShow(
@@ -1162,8 +1196,7 @@ class FloatingWindowManager(
                         TAG,
                         "No focused IME host after $MAX_IME_FOCUS_RETRIES retries; falling back to root view windowToken."
                     )
-                    // Compose 场景下 findFocus() 有时拿不到可编辑 IME 目标，
-                    // 此时退而用根 View 的 windowToken 直接唤起键盘，避免"点输入框键盘弹不出"。
+                    // Compose findFocus() 拿不到可编辑 IME 目标时，用根 View windowToken 直接唤起键盘
                     try {
                         imm.showSoftInput(rootView, InputMethodManager.SHOW_IMPLICIT)
                     } catch (e: Exception) {
